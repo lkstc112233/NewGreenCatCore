@@ -70,5 +70,5 @@ void SGSAnalyzer::addStatement(SGSStatement* p)
 }
 void SGSAnalyzer::addFunction(SGSFunction* p)
 {
-	m_functions.insert(std::make_pair(p->getIdentifierId(),p));
+	//m_functions.insert(std::make_pair(p->getIdentifierId(),p));
 }

@@ -89,3 +89,5 @@ public:
 public:
 	virtual std::string getDebugString();
 };
+
+extern SGSExpression* nullExpression;

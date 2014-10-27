@@ -129,11 +129,13 @@ extern "C" {
 	}
 	void* makeFunctionWithParameters(int id,void* statements,void* args)
 	{
-		return new SGSFunction(id,(SGSStatement*)statements,(SGSParameters*)args);
+		//TODO
+		return new SGSFunction((SGSStatement*)statements,(SGSParameters*)args);
 	}
 	void* makeFunctionWithoutParameters(int id,void* statements)
 	{
-		return new SGSFunction(id,(SGSStatement*)statements);
+		//TODO
+		return new SGSFunction((SGSStatement*)statements);
 	}
 	void* getFunctionCallFunctionWithArguments(void* function,void* arguments)
 	{

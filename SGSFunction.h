@@ -35,14 +35,12 @@ public:
 class SGSFunction
 {
 protected:
-	int identifierId;
 	SGSParameters *parameter;
 	SGSStatement *statements;
 public:
 	SGSFunction();
-	SGSFunction(int id,SGSStatement *sta,SGSParameters *param=NULL);
+	SGSFunction(SGSStatement *sta,SGSParameters *param=NULL);
 	~SGSFunction(void);
-	inline int getIdentifierId(){return identifierId;}
 	virtual SGSValue run(SGSArguments *args);
 public:
 	virtual std::string getDebugString();
@@ -52,12 +50,11 @@ class SGSNativeFunction : public SGSFunction
 protected:
 	SGSValue (*pfunc)(void* arg);
 public:
-	SGSNativeFunction(int id,SGSValue (*sta)(void*));
+	SGSNativeFunction(SGSValue (*sta)(void*));
 	~SGSNativeFunction(void);
-	inline int getIdentifierId(){return identifierId;}
 	virtual SGSValue run(SGSArguments *args);
 public:
 	virtual std::string getDebugString();
 };
 
-extern SGSFunction* null_Function;
+extern SGSFunction* nullFunction;

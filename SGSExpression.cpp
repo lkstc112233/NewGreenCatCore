@@ -10,6 +10,11 @@
 #include "SGSStackFrame.h"
 
 std::string addTab(std::string &strIn);
+namespace NullObjects
+{
+SGSLiteralExpression r_nullExpression;
+}
+SGSExpression* nullExpression=&NullObjects::r_nullExpression;
 
 SGSExpression::SGSExpression()
 {
@@ -161,17 +166,17 @@ SGSFunction* SGSLiteralExpression::toFunction()
 	{
 	case ETNull:
 		type=ETFunction;
-		return value.function=new SGSFunction(-1,NULL);
+		return value.function=new SGSFunction();
 	case ETString:
 		type=ETFunction;
 		delete value.stringValue;
-		return value.function=new SGSFunction(-1,NULL);
+		return value.function=new SGSFunction();
 	case ETInteger:
 		type=ETFunction;
-		return value.function=new SGSFunction(-1,NULL);
+		return value.function=new SGSFunction();
 	case ETFloat:
 		type=ETFunction;
-		return value.function=new SGSFunction(-1,NULL);
+		return value.function=new SGSFunction();
 	case ETFunction:
 		return value.function;
 	case ETIdentifier:

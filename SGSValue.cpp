@@ -160,7 +160,7 @@ SGSValue::operator SGSFunction*()
 	case VTInteger:
 	case VTFloat:
 	case VTString:
-		return ;
+		return nullFunction;
 	case VTFunction:
 		return valueStorage.functionValue;
 //	case ARRAY:

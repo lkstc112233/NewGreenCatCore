@@ -6,7 +6,11 @@
 #include "SGSVirtualMachine.h"
 
 std::string addTab(std::string &strIn);
-SGSFunction* null_Function=new SGSFunction;
+namespace NullObjects
+{
+SGSFunction r_nullFunction;
+}
+SGSFunction* nullFunction = &NullObjects::r_nullFunction;
 
 SGSParameters::SGSParameters(void)
 {
@@ -46,10 +50,10 @@ void SGSArguments::addArgument(SGSExpression* expression)
 SGSExpression* SGSArguments::operator[](int i)
 {
 	if (i<0)
-		return SGSValue();
+		return nullExpression;
 	if (expressions.size()>i)
 		return expressions[i];
-	return SGSValue();
+	return nullExpression;
 }
 std::string SGSArguments::getDebugString()
 {
@@ -64,9 +68,8 @@ SGSFunction::SGSFunction()
 	, statements(new SGSEmptyStatement)
 {
 }
-SGSFunction::SGSFunction(int id,SGSStatement *sta,SGSParameters *param)
-	: identifierId(id)
-	, parameter(param)
+SGSFunction::SGSFunction(SGSStatement *sta,SGSParameters *param)
+	: parameter(param)
 	, statements(sta)
 {
 }
@@ -78,15 +81,6 @@ SGSFunction::~SGSFunction(void)
 std::string SGSFunction::getDebugString()
 {
 	std::string toReturn="Type : FunctionDefinition\n";
-	if (identifierId<0)
-		toReturn+="	No Name Function\n";
-	else
-	{
-		toReturn+="	IdentifierId=";
-		char cache[12];
-		toReturn+=_itoa(identifierId,cache,10);
-		toReturn+="\n";
-	}
 	if (parameter)
 	{
 		toReturn += "	Parameters : \n";
@@ -107,10 +101,12 @@ std::string SGSFunction::getDebugString()
 SGSValue SGSFunction::run(SGSArguments *args)
 {
 	//args
+	//TODO
+	return 1.0l;
 }
 
-SGSNativeFunction::SGSNativeFunction(int id,SGSValue (*sta)(void*))
-	: SGSFunction(id,NULL,NULL)
+SGSNativeFunction::SGSNativeFunction(SGSValue (*sta)(void*))
+	: SGSFunction(NULL,NULL)
 	, pfunc(sta)
 {
 }
@@ -128,5 +124,5 @@ SGSValue SGSNativeFunction::run(SGSArguments *args)
 	if (!args||args->count()==0)
 		return pfunc(NULL);
 	else
-		return pfunc(s_virtualMachine->runExpression(args[0]));
+		return pfunc(s_virtualMachine->runExpression((*args)[0]));
 }
