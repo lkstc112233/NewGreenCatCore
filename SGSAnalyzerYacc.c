@@ -43,6 +43,7 @@ typedef union
 	long long			integer_value;
 	long double			float_value;
 	char*				string_value;
+	int					identifier_id;
 } YYSTYPE;
 #include <stdio.h>
 
@@ -121,10 +122,10 @@ static const short yyrhs[] = {    30,
 
 #if YYDEBUG != 0
 static const short yyrline[] = { 0,
-    31,    32,    36,    37,    41,    42,    46,    47,    51,    52,
-    53,    54,    55,    56,    57,    61,    65,    69,    73,    80,
-    81,    82,    83,    84,    88,    92,    96,   100,   101,   102,
-   103,   104,   105,   106,   107
+    32,    33,    37,    38,    42,    43,    47,    48,    52,    53,
+    54,    55,    56,    57,    58,    62,    66,    70,    74,    81,
+    82,    83,    84,    85,    89,    93,    97,   101,   102,   103,
+   104,   105,   106,   107,   108
 };
 #endif
 
@@ -688,161 +689,161 @@ yyreduce:
   switch (yyn) {
 
 case 1:
-#line 31 "sgsanalyzer.y"
-{ addStatement(yyvsp[0].pointer); ;
-    break;}
-case 2:
 #line 32 "sgsanalyzer.y"
 { addStatement(yyvsp[0].pointer); ;
     break;}
+case 2:
+#line 33 "sgsanalyzer.y"
+{ addStatement(yyvsp[0].pointer); ;
+    break;}
 case 3:
-#line 36 "sgsanalyzer.y"
+#line 37 "sgsanalyzer.y"
 { yyval.pointer = getStatementsBlockStatement(yyvsp[0].pointer); ;
     break;}
 case 4:
-#line 37 "sgsanalyzer.y"
+#line 38 "sgsanalyzer.y"
 { yyval.pointer = addStatementToStatementsBlock(yyvsp[-1].pointer,yyvsp[0].pointer); ;
     break;}
 case 5:
-#line 41 "sgsanalyzer.y"
-{ yyval.pointer = getParametersList(getIdentifierId(yyvsp[0].string_value)); ;
+#line 42 "sgsanalyzer.y"
+{ yyval.pointer = getParametersList(yyvsp[0].identifier_id); ;
     break;}
 case 6:
-#line 42 "sgsanalyzer.y"
-{ yyval.pointer = addParameterToParametersList(yyvsp[-2].pointer,getIdentifierId(yyvsp[0].string_value)); ;
+#line 43 "sgsanalyzer.y"
+{ yyval.pointer = addParameterToParametersList(yyvsp[-2].pointer,yyvsp[0].identifier_id); ;
     break;}
 case 7:
-#line 46 "sgsanalyzer.y"
+#line 47 "sgsanalyzer.y"
 { yyval.pointer = getArgumentsList(yyvsp[0].pointer); ;
     break;}
 case 8:
-#line 47 "sgsanalyzer.y"
+#line 48 "sgsanalyzer.y"
 { yyval.pointer = addParameterToArgumentsList(yyvsp[-2].pointer,yyvsp[0].pointer); ;
     break;}
 case 9:
-#line 51 "sgsanalyzer.y"
-{ yyval.pointer = getEmptyStatement(); ;
-    break;}
-case 10:
 #line 52 "sgsanalyzer.y"
 { yyval.pointer = getEmptyStatement(); ;
     break;}
-case 11:
+case 10:
 #line 53 "sgsanalyzer.y"
+{ yyval.pointer = getEmptyStatement(); ;
+    break;}
+case 11:
+#line 54 "sgsanalyzer.y"
 { yyval.pointer = getExpressionStatement(yyvsp[-1].pointer); ;
     break;}
 case 12:
-#line 54 "sgsanalyzer.y"
+#line 55 "sgsanalyzer.y"
 { yyval.pointer = yyvsp[-1].pointer; ;
     break;}
 case 13:
-#line 55 "sgsanalyzer.y"
-{ yyval.pointer = getVariableDefineStatement(getIdentifierId(yyvsp[-1].string_value)); ;
+#line 56 "sgsanalyzer.y"
+{ yyval.pointer = getVariableDefineStatement(yyvsp[-1].identifier_id); ;
     break;}
 case 14:
-#line 56 "sgsanalyzer.y"
-{ yyval.pointer = getVariableDefineAndInitializeStatement(getIdentifierId(yyvsp[-3].string_value),yyvsp[-1].pointer); ;
+#line 57 "sgsanalyzer.y"
+{ yyval.pointer = getVariableDefineAndInitializeStatement(yyvsp[-3].identifier_id,yyvsp[-1].pointer); ;
     break;}
 case 15:
-#line 58 "sgsanalyzer.y"
+#line 59 "sgsanalyzer.y"
 {
 		yyval.pointer = getIfStatement(yyvsp[-2].pointer,yyvsp[0].pointer); 
 	;
     break;}
 case 16:
-#line 62 "sgsanalyzer.y"
+#line 63 "sgsanalyzer.y"
 {
 		yyval.pointer = getIfxStatement(yyvsp[-4].pointer,yyvsp[-2].pointer,yyvsp[0].pointer);
 	;
     break;}
 case 17:
-#line 66 "sgsanalyzer.y"
+#line 67 "sgsanalyzer.y"
 {
 		yyval.pointer = getForStatement(yyvsp[-6].pointer,yyvsp[-4].pointer,yyvsp[-2].pointer,yyvsp[0].pointer);
 	;
     break;}
 case 18:
-#line 70 "sgsanalyzer.y"
+#line 71 "sgsanalyzer.y"
 {
 		yyval.pointer = getWhileStatement(yyvsp[-2].pointer,yyvsp[0].pointer);
 	;
     break;}
 case 19:
-#line 74 "sgsanalyzer.y"
+#line 75 "sgsanalyzer.y"
 {
 		yyval.pointer = getDoStatement(yyvsp[-2].pointer,yyvsp[-5].pointer);
 	;
     break;}
 case 20:
-#line 80 "sgsanalyzer.y"
+#line 81 "sgsanalyzer.y"
 { yyval.pointer = getFloatExpression(yyvsp[0].float_value); ;
     break;}
 case 21:
-#line 81 "sgsanalyzer.y"
+#line 82 "sgsanalyzer.y"
 { yyval.pointer = getIntegerExpression(yyvsp[0].integer_value); ;
     break;}
 case 22:
-#line 82 "sgsanalyzer.y"
+#line 83 "sgsanalyzer.y"
 { yyval.pointer = getStringExpression(yyvsp[0].string_value); ;
     break;}
 case 23:
-#line 83 "sgsanalyzer.y"
-{ yyval.pointer = getIdentifierExpression(yyvsp[0].string_value); ;
+#line 84 "sgsanalyzer.y"
+{ yyval.pointer = getIdentifierExpression(yyvsp[0].identifier_id); ;
     break;}
 case 24:
-#line 85 "sgsanalyzer.y"
+#line 86 "sgsanalyzer.y"
 {
-		yyval.pointer = getAssignOperatorExpression(getIdentifierExpression(yyvsp[-4].string_value),getFunctionExpression(makeFunctionWithParameters(yyvsp[0].pointer,yyvsp[-2].pointer)));
+		yyval.pointer = getAssignOperatorExpression(getIdentifierExpression(yyvsp[-4].identifier_id),getFunctionExpression(makeFunctionWithParameters(yyvsp[0].pointer,yyvsp[-2].pointer)));
 	;
     break;}
 case 25:
-#line 89 "sgsanalyzer.y"
+#line 90 "sgsanalyzer.y"
 {
-		yyval.pointer = getAssignOperatorExpression(getIdentifierExpression(yyvsp[-3].string_value),getFunctionExpression(makeFunctionWithoutParameters(yyvsp[0].pointer)));
+		yyval.pointer = getAssignOperatorExpression(getIdentifierExpression(yyvsp[-3].identifier_id),getFunctionExpression(makeFunctionWithoutParameters(yyvsp[0].pointer)));
 	;
     break;}
 case 26:
-#line 93 "sgsanalyzer.y"
+#line 94 "sgsanalyzer.y"
 {
 		yyval.pointer = getFunctionExpression(makeFunctionWithParameters(yyvsp[0].pointer,yyvsp[-2].pointer));
 	;
     break;}
 case 27:
-#line 97 "sgsanalyzer.y"
+#line 98 "sgsanalyzer.y"
 {
 		yyval.pointer = getFunctionExpression(makeFunctionWithoutParameters(yyvsp[0].pointer));
 	;
     break;}
 case 28:
-#line 100 "sgsanalyzer.y"
+#line 101 "sgsanalyzer.y"
 { yyval.pointer = yyvsp[-1].pointer; ;
     break;}
 case 29:
-#line 101 "sgsanalyzer.y"
+#line 102 "sgsanalyzer.y"
 { yyval.pointer = getFunctionCallFunctionWithoutArguments(yyvsp[-2].pointer); ;
     break;}
 case 30:
-#line 102 "sgsanalyzer.y"
+#line 103 "sgsanalyzer.y"
 { yyval.pointer = getFunctionCallFunctionWithArguments(yyvsp[-3].pointer,yyvsp[-1].pointer); ;
     break;}
 case 31:
-#line 103 "sgsanalyzer.y"
+#line 104 "sgsanalyzer.y"
 { yyval.pointer = getAddOperatorExpression(yyvsp[-2].pointer,yyvsp[0].pointer); ;
     break;}
 case 32:
-#line 104 "sgsanalyzer.y"
+#line 105 "sgsanalyzer.y"
 { yyval.pointer = getSubOperatorExpression(yyvsp[-2].pointer,yyvsp[0].pointer); ;
     break;}
 case 33:
-#line 105 "sgsanalyzer.y"
+#line 106 "sgsanalyzer.y"
 { yyval.pointer = getMulOperatorExpression(yyvsp[-2].pointer,yyvsp[0].pointer); ;
     break;}
 case 34:
-#line 106 "sgsanalyzer.y"
+#line 107 "sgsanalyzer.y"
 { yyval.pointer = getDivOperatorExpression(yyvsp[-2].pointer,yyvsp[0].pointer); ;
     break;}
 case 35:
-#line 107 "sgsanalyzer.y"
+#line 108 "sgsanalyzer.y"
 { yyval.pointer = getAssignOperatorExpression(yyvsp[-2].pointer,yyvsp[0].pointer); ;
     break;}
 }
@@ -1040,7 +1041,7 @@ yyerrhandle:
   yystate = yyn;
   goto yynewstate;
 }
-#line 110 "sgsanalyzer.y"
+#line 111 "sgsanalyzer.y"
 
 int yyerror(char *s)
 {

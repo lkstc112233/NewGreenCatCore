@@ -24,7 +24,7 @@ int yywrap(void);
 <INITIAL>"="							return ASSIGN;
 <INITIAL>","							return COMMA;
 <INITIAL>";"							return SEMICOLON;
-<INITIAL>[A-Za-z_][A-Za-z0-9_]*			yylval.string_value=yytext;return IDENTIFIER;
+<INITIAL>[A-Za-z_][A-Za-z0-9_]*			yylval.identifier_id = getIdentifierId(yytext);return IDENTIFIER;
 <INITIAL>[0-9]+							yylval.integer_value = strtol(yytext,NULL,10);return INTEGER_LITERAL;
 <INITIAL>[0-9]+\.|[0-9]*\.[0-9]+		yylval.float_value = strtod(yytext,NULL);return DOUBLE_LITERAL;
 <INITIAL>\"								clearStringLiteralCache();BEGIN STRING_LITERAL_STATE;

@@ -100,9 +100,8 @@ std::string SGSFunction::getDebugString()
 }
 SGSValue SGSFunction::run(SGSArguments *args)
 {
-	//args
-	//TODO
-	return 1.0l;
+	s_virtualMachine->runStatement(statements);
+	return SGSValue();
 }
 
 SGSNativeFunction::SGSNativeFunction(SGSValue (*sta)(SGSValue))

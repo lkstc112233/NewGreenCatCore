@@ -748,7 +748,7 @@ return SEMICOLON;
 case 19:
 YY_RULE_SETUP
 #line 27 "SGSAnalyzer.l"
-yylval.string_value=yytext;return IDENTIFIER;
+yylval.identifier_id = getIdentifierId(yytext);return IDENTIFIER;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP

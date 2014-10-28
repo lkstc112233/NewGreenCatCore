@@ -50,9 +50,9 @@ extern "C" {
 	{
 		return s_analyzerVector->getIdentifierId(c);
 	}
-	void* getIdentifierExpression(char* c)
+	void* getIdentifierExpression(int id)
 	{
-		return new SGSLiteralExpression(s_analyzerVector->getIdentifierId(c));
+		return new SGSLiteralExpression(id);
 	}
 	void* getFunctionExpression(void* fun)
 	{

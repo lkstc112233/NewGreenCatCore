@@ -4,6 +4,7 @@ typedef union
 	long long			integer_value;
 	long double			float_value;
 	char*				string_value;
+	int					identifier_id;
 } YYSTYPE;
 #define	IF	257
 #define	FOR	258

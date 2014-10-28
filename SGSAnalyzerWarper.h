@@ -14,7 +14,7 @@ extern "C" {
 	void* getFloatExpression(long double d);
 	void* getStringExpression();
 	int getIdentifierId(char* c);
-	void* getIdentifierExpression(char* c);
+	void* getIdentifierExpression(int id);
 	void* getFunctionExpression(void* fun);
 	void* getEmptyStatement();
 	void* getExpressionStatement(void* e);

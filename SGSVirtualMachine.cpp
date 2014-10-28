@@ -82,6 +82,7 @@ SGSValue SGSVirtualMachine::runFunction(SGSFunction* function,SGSArguments *args
 	SGSStatementStackFrameBase* frame=new SGSFunctionStackFrame();
 	frame->setParentFrame(&getFrameStackTop());
 	pushFrame(frame);
+	// put args;
 	SGSValue result=function->run(args);
 	popFrame();
 	return result;

@@ -1,1 +1,7 @@
+
+function r ()
+{
 printf("Hello world!");
+};
+
+r();

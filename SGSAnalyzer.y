@@ -11,12 +11,13 @@ int yylex(void);
 	long long			integer_value;
 	long double			float_value;
 	char*				string_value;
+	int					identifier_id;
 }
 %token					IF FOR WHILE DO FUNCTION VAR
 %token	<float_value>	DOUBLE_LITERAL
 %token	<integer_value>	INTEGER_LITERAL
 %token	<string_value>	STRING_LITERAL
-%token	<string_value>	IDENTIFIER
+%token	<identifier_id>	IDENTIFIER
 %type	<pointer>		expression statement statements_list arguments parameters
 %token					RIGHT_PAREN LEFT_BRACE RIGHT_BRACE SEMICOLON COMMA
 %right					ASSIGN
@@ -38,8 +39,8 @@ statements_list
 	;
 
 parameters
-	: IDENTIFIER									{ $$ = getParametersList(getIdentifierId($1)); }
-	| parameters COMMA IDENTIFIER					{ $$ = addParameterToParametersList($1,getIdentifierId($3)); }
+	: IDENTIFIER									{ $$ = getParametersList($1); }
+	| parameters COMMA IDENTIFIER					{ $$ = addParameterToParametersList($1,$3); }
 	;
 
 arguments
@@ -52,8 +53,8 @@ statement
 	| LEFT_BRACE RIGHT_BRACE						{ $$ = getEmptyStatement(); }
 	| expression SEMICOLON							{ $$ = getExpressionStatement($1); }
 	| LEFT_BRACE statements_list RIGHT_BRACE		{ $$ = $2; }
-	| VAR IDENTIFIER SEMICOLON						{ $$ = getVariableDefineStatement(getIdentifierId($2)); }
-	| VAR IDENTIFIER ASSIGN expression SEMICOLON	{ $$ = getVariableDefineAndInitializeStatement(getIdentifierId($2),$4); }
+	| VAR IDENTIFIER SEMICOLON						{ $$ = getVariableDefineStatement($2); }
+	| VAR IDENTIFIER ASSIGN expression SEMICOLON	{ $$ = getVariableDefineAndInitializeStatement($2,$4); }
 	| IF LEFT_PAREN expression RIGHT_PAREN statement %prec IFX
 	{
 		$$ = getIfStatement($3,$5); 
