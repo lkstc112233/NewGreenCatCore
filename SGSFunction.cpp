@@ -25,7 +25,7 @@ void SGSParameters::addParameter(int argumentId)
 std::string SGSParameters::getDebugString()
 {
 	std::string toReturn;
-	for (std::vector<int>::iterator argumentsId=argumentsIds.begin();argumentsId!= argumentsIds.end();++argumentsId)
+	for (auto argumentsId=argumentsIds.begin();argumentsId!= argumentsIds.end();++argumentsId)
 	{
 		toReturn+="IdentifierId=";
 		char cache[12];
@@ -40,7 +40,7 @@ SGSArguments::SGSArguments(void)
 }
 SGSArguments::~SGSArguments(void)
 {
-	for(std::vector<SGSExpression*>::iterator expression=expressions.begin();expressions.end()!=expression;++expression)
+	for(auto expression=expressions.begin();expressions.end()!=expression;++expression)
 		delete *expression;
 }
 void SGSArguments::addArgument(SGSExpression* expression)
@@ -105,7 +105,7 @@ SGSValue SGSFunction::run(SGSArguments *args)
 	return 1.0l;
 }
 
-SGSNativeFunction::SGSNativeFunction(SGSValue (*sta)(void*))
+SGSNativeFunction::SGSNativeFunction(SGSValue (*sta)(SGSValue))
 	: SGSFunction(NULL,NULL)
 	, pfunc(sta)
 {
@@ -122,7 +122,7 @@ std::string SGSNativeFunction::getDebugString()
 SGSValue SGSNativeFunction::run(SGSArguments *args)
 {
 	if (!args||args->count()==0)
-		return pfunc(NULL);
+		return pfunc(SGSValue());
 	else
 		return pfunc(s_virtualMachine->runExpression((*args)[0]));
 }

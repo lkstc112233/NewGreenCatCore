@@ -2,24 +2,34 @@
 //
 
 #include "stdafx.h"
-#include "SGSAnalyzer.h"
-#include "SGSStatement.h"
-#include "SGSFunction.h"
+
 #include <map>
 #include <iostream>
+#include <algorithm>
+
+#include "SGSAnalyzer.h"
+#include "SGSAnalyzerWarper.h"
+#include "SGSStatement.h"
+#include "SGSFunction.h"
+#include "SGSVirtualMachine.h"
+#include "SGSNativeFunctions.h"
+
 extern "C" int yyparse();
 
 extern SGSAnalyzer *s_analyzerVector;
 
-
 int _tmain(int argc, _TCHAR* argv[])
 {
-	s_analyzerVector=new SGSAnalyzer();
+	CreateAnalyzerInstance();
 	yyparse();
-	for (SGSAnalyzer::DEBUG_OutputListType::iterator i=s_analyzerVector->m_statements.begin();i!=s_analyzerVector->m_statements.end();++i)
-		std::cout<<(*i)->getDebugString();
-	for (std::map<int,SGSFunction*>::iterator i=s_analyzerVector->m_functions.begin();i!=s_analyzerVector->m_functions.end();++i)
-		std::cout<<i->second->getDebugString();
+	std::for_each(s_analyzerVector->getStatements().begin(),s_analyzerVector->getStatements().end(),
+		[](SGSStatement *statement)
+	{
+		std::cout<<statement->getDebugString();
+	});
+	createNewVirtualMachine(s_analyzerVector);
+	s_virtualMachine->registerFunction("printf",NativeFunctions::myOutput);
+	s_virtualMachine->run();
 	return 0;
 }
 

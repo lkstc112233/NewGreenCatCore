@@ -569,19 +569,19 @@ SGSValue SGSOperateExpression::run()
 	{
 	case OTAdd:
 		return s_virtualMachine->runExpression(args[0])
-			.operatorAdd(s_virtualMachine->runExpression(args[0]));
+			.operatorAdd(s_virtualMachine->runExpression(args[1]));
 	case OTSub:
 		return s_virtualMachine->runExpression(args[0])
-			.operatorSub(s_virtualMachine->runExpression(args[0]));
+			.operatorSub(s_virtualMachine->runExpression(args[1]));
 	case OTMul:
 		return s_virtualMachine->runExpression(args[0])
-			.operatorMul(s_virtualMachine->runExpression(args[0]));
+			.operatorMul(s_virtualMachine->runExpression(args[1]));
 	case OTDiv:
 		return s_virtualMachine->runExpression(args[0])
-			.operatorDiv(s_virtualMachine->runExpression(args[0]));
+			.operatorDiv(s_virtualMachine->runExpression(args[1]));
 	case OTAssign:
 		return s_virtualMachine->runExpression(args[0])
-			.operatorAssign(s_virtualMachine->runExpression(args[0]));
+			.operatorAssign(s_virtualMachine->runExpression(args[1]));
 	default:
 		throw SGSInvalidTypeException("SGSOperateExpression::run");
 	}
@@ -609,7 +609,7 @@ std::string SGSOperateExpression::getDebugString()
 	}
 	std::string toReturn="Type : ";
 	toReturn += typeName;
-	for (std::vector<SGSExpression*>::iterator arg=args.begin();args.end()!=arg;++arg)
+	for (auto arg=args.begin();args.end()!=arg;++arg)
 		toReturn+=addTab((*arg)->getDebugString());
 	toReturn+="Endof : ";
 	toReturn += typeName;
@@ -628,7 +628,7 @@ SGSFunctionCallExpression::~SGSFunctionCallExpression(void)
 }
 std::string SGSFunctionCallExpression::getDebugString()
 {
-	std::string toReturn="Type : FunctionCall";
+	std::string toReturn="Type : FunctionCall\n";
 	toReturn+="	Function:\n";
 	toReturn+=addTab(addTab(function->getDebugString()));
 	if (arguments)
@@ -641,7 +641,5 @@ std::string SGSFunctionCallExpression::getDebugString()
 }
 SGSValue SGSFunctionCallExpression::run()
 {
-	//return s_virtualMachine->runExpression(args[0])
-	return SGSValue();
-		//.operatorAdd(s_virtualMachine->runExpression(args[0]));
+	return s_virtualMachine->runFunction((s_virtualMachine->runExpression(function).operator SGSFunction*()),arguments);
 }

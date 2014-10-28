@@ -89,6 +89,9 @@
     <ClInclude Include="SGSGarbageCollector.h">
       <Filter>头文件\VirtualMachine\MachineRuntime</Filter>
     </ClInclude>
+    <ClInclude Include="SGSNativeFunctions.h">
+      <Filter>头文件\VirtualMachine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -135,6 +138,9 @@
     </ClCompile>
     <ClCompile Include="SGSGarbageCollector.cpp">
       <Filter>源文件\VirtualMachine\MachineRuntime</Filter>
+    </ClCompile>
+    <ClCompile Include="SGSNativeFunctions.cpp">
+      <Filter>源文件\VirtualMachine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

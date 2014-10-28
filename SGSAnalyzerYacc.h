@@ -20,15 +20,14 @@ typedef union
 #define	RIGHT_BRACE	269
 #define	SEMICOLON	270
 #define	COMMA	271
-#define	LIST_SEAT	272
-#define	ASSIGN	273
-#define	ADD	274
-#define	SUB	275
-#define	MUL	276
-#define	DIV	277
-#define	IFX	278
-#define	ELSE	279
-#define	LEFT_PAREN	280
+#define	ASSIGN	272
+#define	ADD	273
+#define	SUB	274
+#define	MUL	275
+#define	DIV	276
+#define	IFX	277
+#define	ELSE	278
+#define	LEFT_PAREN	279
 
 
 extern YYSTYPE yylval;

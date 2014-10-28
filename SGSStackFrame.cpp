@@ -48,3 +48,8 @@ SGSValue* SGSStatementStackFrame::getValue(int id)
 		return toReturn;
 	return parent->getValue(id);
 }
+
+SGSValue* SGSThroughStackFrame::getValue(int id)
+{
+	return parent->getValue(id);
+}

@@ -7,6 +7,7 @@
 #include "SGSVirtualMachine.h"
 #include "SGSStackFrame.h"
 #include "SGSExceptions.h"
+#include "SGSValue.h"
 
 std::string addTab(std::string &strIn);
 
@@ -16,7 +17,7 @@ SGSStatement::SGSStatement(void)
 SGSStatement::~SGSStatement(void)
 {
 }
-SGSStackFrame* SGSStatement::getStackFrame()
+SGSStatementStackFrameBase* SGSStatement::getStackFrame()
 {
 	return new SGSStatementStackFrame();
 }
@@ -30,6 +31,10 @@ SGSEmptyStatement::~SGSEmptyStatement(void)
 StatementType SGSEmptyStatement::getStatementType()
 {
 	return STEmpty;
+}
+SGSStatementStackFrameBase* SGSEmptyStatement::getStackFrame()
+{
+	return new SGSThroughStackFrame();
 }
 std::string SGSEmptyStatement::getDebugString()
 {
@@ -49,17 +54,20 @@ StatementType SGSExpressionStatement::getStatementType()
 {
 	return STExpression;
 }
+SGSStatementStackFrameBase* SGSExpressionStatement::getStackFrame()
+{
+	return new SGSThroughStackFrame();
+}
+int SGSExpressionStatement::run()
+{
+	return s_virtualMachine->runExpression(expression);
+}
 std::string SGSExpressionStatement::getDebugString()
 {
 	std::string toReturn="Type : STExpression\n";
 	toReturn+=addTab(expression->getDebugString());
 	toReturn+="Endof : STExpression\n";
 	return toReturn;
-}
-int SGSExpressionStatement::run()
-{
-	// TODO;
-	return 0;
 }
 
 SGSStatementBlockStatement::SGSStatementBlockStatement()
@@ -77,14 +85,6 @@ StatementType SGSStatementBlockStatement::getStatementType()
 {
 	return STStatementBlock;
 }
-std::string SGSStatementBlockStatement::getDebugString()
-{
-	std::string toReturn="Type : STStatementBlock\n";
-	for (std::vector<SGSStatement*>::iterator statement=statements.begin();statements.end()!=statement;++statement)
-		toReturn+=addTab((*statement)->getDebugString());
-	toReturn+="Endof : STStatementBlock\n";
-	return toReturn;
-}
 int SGSStatementBlockStatement::run()
 {
 	try
@@ -96,6 +96,14 @@ int SGSStatementBlockStatement::run()
 		return e.errCode;
 	}
 	return 0;
+}
+std::string SGSStatementBlockStatement::getDebugString()
+{
+	std::string toReturn="Type : STStatementBlock\n";
+	for (std::vector<SGSStatement*>::iterator statement=statements.begin();statements.end()!=statement;++statement)
+		toReturn+=addTab((*statement)->getDebugString());
+	toReturn+="Endof : STStatementBlock\n";
+	return toReturn;
 }
 
 SGSVariableStatement::SGSVariableStatement(int varId,SGSExpression* exp)
@@ -110,6 +118,15 @@ SGSVariableStatement::~SGSVariableStatement(void)
 StatementType SGSVariableStatement::getStatementType()
 {
 	return STVariable;
+}
+SGSStatementStackFrameBase* SGSVariableStatement::getStackFrame()
+{
+	return new SGSThroughStackFrame();
+}
+int SGSVariableStatement::run()
+{
+	// TODO;
+	return 0;
 }
 std::string SGSVariableStatement::getDebugString()
 {
@@ -126,11 +143,7 @@ std::string SGSVariableStatement::getDebugString()
 	toReturn+="Endof : STVariable\n";
 	return toReturn;
 }
-int SGSVariableStatement::run()
-{
-	// TODO;
-	return 0;
-}
+
 
 SGSIfxStatement::SGSIfxStatement(SGSExpression *exp,SGSStatement *s_true,SGSStatement *s_false)
 	: expression(exp)
@@ -150,6 +163,11 @@ StatementType SGSIfxStatement::getStatementType()
 		return STIfx;
 	else
 		return STIf;
+}
+int SGSIfxStatement::run()
+{
+	// TODO;
+	return 0;
 }
 std::string SGSIfxStatement::getDebugString()
 {
@@ -173,11 +191,6 @@ std::string SGSIfxStatement::getDebugString()
 		toReturn+="Endof : STIf\n";
 	return toReturn;
 }
-int SGSIfxStatement::run()
-{
-	// TODO;
-	return 0;
-}
 
 SGSForStatement::SGSForStatement(SGSExpression *exp1,SGSExpression *exp2,SGSExpression *exp3,SGSStatement *sta)
 	: expressionBefore(exp1)
@@ -197,6 +210,11 @@ StatementType SGSForStatement::getStatementType()
 {
 	return STFor;
 }
+int SGSForStatement::run()
+{
+	// TODO;
+	return 0;
+}
 std::string SGSForStatement::getDebugString()
 {
 	std::string toReturn="Type : STFor\n";
@@ -210,11 +228,6 @@ std::string SGSForStatement::getDebugString()
 	toReturn += addTab(addTab(statement->getDebugString()));
 	toReturn+="Endof : STFor\n";
 	return toReturn;
-}
-int SGSForStatement::run()
-{
-	// TODO;
-	return 0;
 }
 
 SGSWhileStatement::SGSWhileStatement(SGSExpression *exp,SGSStatement *sta)
@@ -231,6 +244,11 @@ StatementType SGSWhileStatement::getStatementType()
 {
 	return STWhile;
 }
+int SGSWhileStatement::run()
+{
+	// TODO;
+	return 0;
+}
 std::string SGSWhileStatement::getDebugString()
 {
 	std::string toReturn="Type : STWhile\n";
@@ -240,11 +258,6 @@ std::string SGSWhileStatement::getDebugString()
 	toReturn += addTab(addTab(statement->getDebugString()));
 	toReturn+="Endof : STWhile\n";
 	return toReturn;
-}
-int SGSWhileStatement::run()
-{
-	// TODO;
-	return 0;
 }
 
 SGSDoStatement::SGSDoStatement(SGSExpression *exp,SGSStatement *sta)
@@ -261,6 +274,11 @@ StatementType SGSDoStatement::getStatementType()
 {
 	return STDo;
 }
+int SGSDoStatement::run()
+{
+	// TODO;
+	return 0;
+}
 std::string SGSDoStatement::getDebugString()
 {
 	std::string toReturn="Type : STDo\n";
@@ -270,9 +288,4 @@ std::string SGSDoStatement::getDebugString()
 	toReturn += addTab(addTab(statement->getDebugString()));
 	toReturn+="Endof : STDo\n";
 	return toReturn;
-}
-int SGSDoStatement::run()
-{
-	// TODO;
-	return 0;
 }

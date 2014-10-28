@@ -54,9 +54,6 @@ SGSValue::~SGSValue(void)
 	case VTString:
 		delete valueStorage.stringValue;
 		break;
-	case VTFunction:
-		delete valueStorage.functionValue;
-		break;
 	default:
 		break;
 	}

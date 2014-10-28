@@ -23,8 +23,6 @@ public:
 	std::list<SGSStatement*> m_statements;
 	std::map<std::string,int> m_identifierTable;
 	std::map<std::string,SGSValue> m_globalValues;
-public:
-	typedef std::list<SGSStatement*> DEBUG_OutputListType;
 private:
 	std::string stringLiteralCache;
 	int lineNumber;
@@ -33,7 +31,7 @@ public:
 	void addStringLiteralCharacter(char);
 	const char* getStringLiteralCache();
 	void lineNumberUp();
-	int getIdentifierId(char* identifierName);
+	int getIdentifierId(const char* identifierName);
 	std::string getIdentifierName(int identifierId);
 	void addStatement(SGSStatement* p);
 	inline const std::list<SGSStatement*>& getStatements(){return m_statements;}

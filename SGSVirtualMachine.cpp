@@ -5,9 +5,17 @@
 #include "SGSVirtualMachine.h"
 #include "SGSStackFrame.h"
 #include "SGSExpression.h"
+#include "SGSStatement.h"
 #include "SGSAnalyzer.h"
 
-SGSVirtualMachine* s_virtualMachine;
+SGSVirtualMachine* s_virtualMachine=NULL;
+
+SGSVirtualMachine* createNewVirtualMachine(SGSAnalyzer *analyzer)
+{
+	if (s_virtualMachine)
+		delete s_virtualMachine;
+	return s_virtualMachine=new SGSVirtualMachine(analyzer);
+}
 
 SGSVirtualMachine::SGSVirtualMachine(SGSAnalyzer* analyzer)
 	: m_analyzer(*analyzer)
@@ -17,6 +25,26 @@ SGSVirtualMachine::SGSVirtualMachine(SGSAnalyzer* analyzer)
 SGSVirtualMachine::~SGSVirtualMachine(void)
 {
 	std::for_each(frameStack.begin(),frameStack.end(),[](SGSStackFrame* i){delete i;});
+}
+void SGSVirtualMachine::registerFunction(std::string name,SGSValue (*pfunc)(SGSValue arg))
+{
+	SGSNativeFunction* nf=new SGSNativeFunction(pfunc);
+	nativeFunctions.push_back(nf);
+	(*getFrameStackBottom().getValue(m_analyzer.getIdentifierId(name.c_str())))=SGSValue(nf);
+}
+void SGSVirtualMachine::pushFrame(SGSStackFrame *f)
+{
+	if (f)
+		frameStack.push_back(f);
+}
+
+void SGSVirtualMachine::popFrame()
+{
+	if (frameStack.size()>1)
+	{
+		delete frameStack.back();
+		frameStack.pop_back();
+	}
 }
 
 int SGSVirtualMachine::run()
@@ -34,18 +62,27 @@ SGSValue SGSVirtualMachine::runExpression(SGSExpression* expression)
 }
 int SGSVirtualMachine::runStatement(SGSStatement* statement)
 {
-	return 0;
+	SGSStatementStackFrameBase* frame=statement->getStackFrame();
+	frame->setParentFrame(&getFrameStackTop());
+	pushFrame(frame);
+	int result=statement->run();
+	popFrame();
+	return result;
 }
-int SGSVirtualMachine::runFunction(int id,SGSArguments *args)
+SGSValue SGSVirtualMachine::runFunction(int id,SGSArguments *args)
 {
-
-	return 0;
+	return runFunction(getFrameStackTop().getValue(id)->operator SGSFunction *(),args);
 }
-int SGSVirtualMachine::runFunction(std::string functionName,SGSArguments *args)
+SGSValue SGSVirtualMachine::runFunction(std::string functionName,SGSArguments *args)
 {
-	return 0;
+	return runFunction(getFrameStackTop().getValue(m_analyzer.getIdentifierId(functionName.c_str()))->operator SGSFunction *(),args);
 }
-int SGSVirtualMachine::runFunction(SGSFunction function,SGSArguments *args)
+SGSValue SGSVirtualMachine::runFunction(SGSFunction* function,SGSArguments *args)
 {
-	return 0;
+	SGSStatementStackFrameBase* frame=new SGSFunctionStackFrame();
+	frame->setParentFrame(&getFrameStackTop());
+	pushFrame(frame);
+	SGSValue result=function->run(args);
+	popFrame();
+	return result;
 }

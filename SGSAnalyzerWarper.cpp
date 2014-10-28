@@ -127,14 +127,12 @@ extern "C" {
 		((SGSArguments*)argumentsList)->addArgument((SGSExpression*)argument);
 		return argumentsList;
 	}
-	void* makeFunctionWithParameters(int id,void* statements,void* args)
+	void* makeFunctionWithParameters(void* statements,void* args)
 	{
-		//TODO
 		return new SGSFunction((SGSStatement*)statements,(SGSParameters*)args);
 	}
-	void* makeFunctionWithoutParameters(int id,void* statements)
+	void* makeFunctionWithoutParameters(void* statements)
 	{
-		//TODO
 		return new SGSFunction((SGSStatement*)statements);
 	}
 	void* getFunctionCallFunctionWithArguments(void* function,void* arguments)

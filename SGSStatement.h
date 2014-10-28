@@ -7,7 +7,7 @@ enum StatementType
 };
 
 class SGSExpression;
-class SGSStackFrame;
+class SGSStatementStackFrameBase;
 
 class SGSStatement
 {
@@ -15,7 +15,7 @@ public:
 	SGSStatement(void);
 	virtual ~SGSStatement(void);
 	virtual StatementType getStatementType()=0;
-	virtual SGSStackFrame* getStackFrame();
+	virtual SGSStatementStackFrameBase* getStackFrame();
 	virtual int run(){return 0;}
 public:
 	virtual std::string getDebugString(){throw false;}
@@ -27,7 +27,7 @@ public:
 	SGSEmptyStatement();
 	virtual ~SGSEmptyStatement(void);
 	virtual StatementType getStatementType();
-	virtual SGSStackFrame* getStackFrame(){return NULL;}
+	virtual SGSStatementStackFrameBase* getStackFrame();
 public:
 	virtual std::string getDebugString();
 };
@@ -40,7 +40,7 @@ public:
 	SGSExpressionStatement(SGSExpression*);
 	virtual ~SGSExpressionStatement(void);
 	virtual StatementType getStatementType();
-	virtual SGSStackFrame* getStackFrame(){return NULL;}
+	virtual SGSStatementStackFrameBase* getStackFrame();
 	virtual int run();
 public:
 	virtual std::string getDebugString();
@@ -69,7 +69,7 @@ public:
 	SGSVariableStatement(int varId,SGSExpression *exp=NULL);
 	virtual ~SGSVariableStatement(void);
 	virtual StatementType getStatementType();
-	virtual SGSStackFrame* getStackFrame(){return NULL;}
+	virtual SGSStatementStackFrameBase* getStackFrame();
 	virtual int run();
 public:
 	virtual std::string getDebugString();

@@ -97,6 +97,7 @@ bison -dv -o SGSAnalyzerYacc.c SGSAnalyzer.y</Command>
     <ClInclude Include="SGSExpression.h" />
     <ClInclude Include="SGSFunction.h" />
     <ClInclude Include="SGSGarbageCollector.h" />
+    <ClInclude Include="SGSNativeFunctions.h" />
     <ClInclude Include="SGSStackFrame.h" />
     <ClInclude Include="SGSPlayerInterface.h" />
     <ClInclude Include="SGSStatement.h" />
@@ -119,6 +120,7 @@ bison -dv -o SGSAnalyzerYacc.c SGSAnalyzer.y</Command>
     <ClCompile Include="SGSExpression.cpp" />
     <ClCompile Include="SGSFunction.cpp" />
     <ClCompile Include="SGSGarbageCollector.cpp" />
+    <ClCompile Include="SGSNativeFunctions.cpp" />
     <ClCompile Include="SGSStackFrame.cpp" />
     <ClCompile Include="SGSPlayerInterface.cpp" />
     <ClCompile Include="SGSStatement.cpp" />

@@ -48,9 +48,9 @@ public:
 class SGSNativeFunction : public SGSFunction
 {
 protected:
-	SGSValue (*pfunc)(void* arg);
+	SGSValue (*pfunc)(SGSValue);
 public:
-	SGSNativeFunction(SGSValue (*sta)(void*));
+	SGSNativeFunction(SGSValue (*sta)(SGSValue));
 	~SGSNativeFunction(void);
 	virtual SGSValue run(SGSArguments *args);
 public:

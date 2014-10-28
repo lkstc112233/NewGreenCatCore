@@ -15,19 +15,22 @@ private:
 	SGSAnalyzer& m_analyzer;
 	std::vector<SGSStackFrame*> frameStack;
 	std::vector<SGSStatement*> statementStack;
-	inline void pushFrame(SGSStackFrame *f){if (f)frameStack.push_back(f);}
-	inline void popFrame(){frameStack.size()<=1?1==1:frameStack.pop_back();}
+	std::vector<SGSFunction*> nativeFunctions;
+	void pushFrame(SGSStackFrame *f);
+	void popFrame();
 public:
 	SGSVirtualMachine(SGSAnalyzer* analyzer);
 	~SGSVirtualMachine(void);
-	inline SGSStackFrame& getFrameStackTop(){return *frameStack.front();}
-	inline SGSStackFrame& getFrameStackBottom(){return *frameStack.back();}
+	void registerFunction(std::string name,SGSValue (*pfunc)(SGSValue arg));
+	inline SGSStackFrame& getFrameStackBottom(){return *frameStack.front();}
+	inline SGSStackFrame& getFrameStackTop(){return *frameStack.back();}
 	int run();
 	SGSValue runExpression(SGSExpression* expression);
 	int runStatement(SGSStatement* statement);
-	int runFunction(int id,SGSArguments *args);
-	int runFunction(std::string functionName,SGSArguments *args);
-	int runFunction(SGSFunction function,SGSArguments *args);
+	SGSValue runFunction(int id,SGSArguments *args);
+	SGSValue runFunction(std::string functionName,SGSArguments *args);
+	SGSValue runFunction(SGSFunction* function,SGSArguments *args);
 };
 
+SGSVirtualMachine* createNewVirtualMachine(SGSAnalyzer *analyzer);
 extern SGSVirtualMachine* s_virtualMachine;

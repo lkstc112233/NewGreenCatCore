@@ -44,3 +44,9 @@ class SGSStatementStackFrame : public SGSStatementStackFrameBase
 public:
 	virtual SGSValue* getValue(int id);
 };
+
+class SGSThroughStackFrame : public SGSStatementStackFrameBase
+{
+public:
+	virtual SGSValue* getValue(int id);
+};

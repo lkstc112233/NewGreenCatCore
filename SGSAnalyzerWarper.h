@@ -31,8 +31,8 @@ extern "C" {
 	void* addParameterToParametersList(void* parameterList,int id);
 	void* getArgumentsList(void *arg);
 	void* addParameterToArgumentsList(void* argumentsList,void *argument);
-	void* makeFunctionWithParameters(int id,void* statements,void* args);
-	void* makeFunctionWithoutParameters(int id,void* statements);
+	void* makeFunctionWithParameters(void* statements,void* args);
+	void* makeFunctionWithoutParameters(void* statements);
 	void* getFunctionCallFunctionWithArguments(void* function,void* arguments);
 	void* getFunctionCallFunctionWithoutArguments(void* function);
 	void* getAddOperatorExpression(void* exp1,void* exp2);

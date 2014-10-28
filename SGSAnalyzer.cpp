@@ -46,7 +46,7 @@ void SGSAnalyzer::lineNumberUp()
 {
 	++lineNumber;
 }
-int SGSAnalyzer::getIdentifierId(char* identifierName)
+int SGSAnalyzer::getIdentifierId(const char* identifierName)
 {
 	std::map<std::string,int>::iterator it=m_identifierTable.find(identifierName);
 	if (m_identifierTable.end()==it)//Not found.
