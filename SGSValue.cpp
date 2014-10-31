@@ -335,3 +335,43 @@ SGSValue SGSValue::operatorDiv(SGSValue &exp)
 		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
 	}
 }
+SGSValue SGSValue::operatorLess(SGSValue &exp)
+{
+	switch(valueType)
+	{
+	case VTNull:
+		return exp;
+	case VTString:
+		return SGSValue(*valueStorage.stringValue+exp.operator std::string());
+	case VTInteger:
+		return SGSValue(valueStorage.integerValue<exp.operator long long()?1.l:0.l);
+	case VTFloat:
+		return SGSValue(valueStorage.floatValue<exp.operator long double()?1.l:0.l);
+	case VTFunction:
+		return *this;
+	case VTLeftValue:
+		return valueStorage.leftSgsValue->operatorLess(exp);
+	default:
+		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
+	}
+}
+SGSValue SGSValue::operatorMore(SGSValue &exp)
+{
+	switch(valueType)
+	{
+	case VTNull:
+		return exp;
+	case VTString:
+		return SGSValue(*valueStorage.stringValue+exp.operator std::string());
+	case VTInteger:
+		return SGSValue(valueStorage.integerValue>exp.operator long long()?1.l:0.l);
+	case VTFloat:
+		return SGSValue(valueStorage.floatValue>exp.operator long double()?1.l:0.l);
+	case VTFunction:
+		return *this;
+	case VTLeftValue:
+		return valueStorage.leftSgsValue->operatorMore(exp);
+	default:
+		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
+	}
+}

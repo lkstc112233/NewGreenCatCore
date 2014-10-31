@@ -27,6 +27,8 @@ extern "C" {
 	void* getForStatement(void *exp1,void *exp2,void *exp3,void *statement);
 	void* getWhileStatement(void *exp1,void *statement);
 	void* getDoStatement(void *exp1,void *statement);
+	void* getReturnStatementWithExpression(void* expression);
+	void* getReturnStatementWithoutExpression();
 	void* getParametersList(int id);
 	void* addParameterToParametersList(void* parameterList,int id);
 	void* getArgumentsList(void *arg);
@@ -39,6 +41,8 @@ extern "C" {
 	void* getSubOperatorExpression(void* exp1,void* exp2);
 	void* getMulOperatorExpression(void* exp1,void* exp2);
 	void* getDivOperatorExpression(void* exp1,void* exp2);
+	void* getLessOperatorExpression(void* exp1,void* exp2);
+	void* getMoreOperatorExpression(void* exp1,void* exp2);
 	void* getAssignOperatorExpression(void* exp1,void* exp2);
 	void addStatement(void* p);
 	void addFunction(void* p);

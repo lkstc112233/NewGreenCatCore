@@ -13,7 +13,7 @@ int yylex(void);
 	char*				string_value;
 	int					identifier_id;
 }
-%token					IF FOR WHILE DO FUNCTION VAR
+%token					IF FOR WHILE DO FUNCTION VAR RETURN
 %token	<float_value>	DOUBLE_LITERAL
 %token	<integer_value>	INTEGER_LITERAL
 %token	<string_value>	STRING_LITERAL
@@ -21,6 +21,7 @@ int yylex(void);
 %type	<pointer>		expression statement statements_list arguments parameters
 %token					RIGHT_PAREN LEFT_BRACE RIGHT_BRACE SEMICOLON COMMA
 %right					ASSIGN
+%left					LESS MORE 
 %left					ADD SUB 
 %left					MUL DIV 
 %nonassoc				IFX
@@ -75,6 +76,8 @@ statement
 	{
 		$$ = getDoStatement($5,$2);
 	}
+	| RETURN SEMICOLON								{ $$ = getReturnStatementWithoutExpression(); }
+	| RETURN expression SEMICOLON					{ $$ = getReturnStatementWithExpression($2); }
 	;
 
 expression 
@@ -105,6 +108,8 @@ expression
 	| expression SUB expression						{ $$ = getSubOperatorExpression($1,$3); }
 	| expression MUL expression						{ $$ = getMulOperatorExpression($1,$3); }
 	| expression DIV expression						{ $$ = getDivOperatorExpression($1,$3); }
+	| expression LESS expression					{ $$ = getLessOperatorExpression($1,$3); }
+	| expression MORE expression					{ $$ = getMoreOperatorExpression($1,$3); }
 	| expression ASSIGN expression					{ $$ = getAssignOperatorExpression($1,$3); }
 	;
 

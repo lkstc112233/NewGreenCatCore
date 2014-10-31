@@ -1,8 +1,31 @@
+//k=1;
 
-function r(k)
+function iff(i)
 {
-printf("Hello world!");
-printf(k);
+	if (i)
+		printf("true");
+	else
+		printf("false");
 };
 
-r(6);
+function fos(iff,txt)
+{
+	for (k=0;k<iff;k=k+1)
+		printf("Now printing "+txt+" No."+k+"!");
+};
+
+//function aho(i)
+//{
+//	var k=2;
+//	return i+k;
+//};
+
+//function r(k)
+//{
+//	printf("Hello world!");
+//	printf(aho(k));
+//};
+
+fos(10);
+fos(5);
+//r(5);

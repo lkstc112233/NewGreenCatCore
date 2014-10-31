@@ -12,7 +12,7 @@ enum LiteralExpressionType
 
 enum OperateExpressionType
 {
-	OTAdd,OTSub,OTMul,OTDiv,OTAssign,
+	OTAdd,OTSub,OTMul,OTDiv,OTAssign,OTLess,OTMore,
 };
 
 class SGSExpression
@@ -55,6 +55,8 @@ public:
 	SGSLiteralExpression* operator-(SGSLiteralExpression *exp);
 	SGSLiteralExpression* operator*(SGSLiteralExpression *exp);
 	SGSLiteralExpression* operator/(SGSLiteralExpression *exp);
+	SGSLiteralExpression* operator<(SGSLiteralExpression *exp);
+	SGSLiteralExpression* operator>(SGSLiteralExpression *exp);
 	virtual SGSValue run();
 	virtual bool isLiteral(){return type!=ETIdentifier;}
 public:

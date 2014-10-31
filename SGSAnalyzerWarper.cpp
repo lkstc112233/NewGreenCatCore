@@ -105,6 +105,14 @@ extern "C" {
 	{
 		return new SGSDoStatement((SGSExpression*)exp1,(SGSStatement*)statement);
 	}
+	void* getReturnStatementWithExpression(void* expression)
+	{
+		return new SGSReturnStatement((SGSExpression*)expression);
+	}
+	void* getReturnStatementWithoutExpression()
+	{
+		return new SGSReturnStatement();
+	}
 	void* getParametersList(int id)
 	{
 		SGSParameters* list = new SGSParameters();
@@ -197,6 +205,30 @@ extern "C" {
 		toReturn->addArgument((SGSExpression*)exp1);
 		toReturn->addArgument((SGSExpression*)exp2);
 		return toReturn;
+	}
+	void* getLessOperatorExpression(void* exp1,void* exp2)
+	{
+		if (((SGSExpression*)exp1)->isLiteral()&&((SGSExpression*)exp2)->isLiteral())
+			return *((SGSLiteralExpression*)exp1)<(SGSLiteralExpression*)exp2;
+		else
+		{
+			SGSOperateExpression* toReturn=new SGSOperateExpression(OTLess);
+			toReturn->addArgument((SGSExpression*)exp1);
+			toReturn->addArgument((SGSExpression*)exp2);
+			return toReturn;
+		}
+	}
+	void* getMoreOperatorExpression(void* exp1,void* exp2)
+	{
+		if (((SGSExpression*)exp1)->isLiteral()&&((SGSExpression*)exp2)->isLiteral())
+			return *((SGSLiteralExpression*)exp1)>(SGSLiteralExpression*)exp2;
+		else
+		{
+			SGSOperateExpression* toReturn=new SGSOperateExpression(OTMore);
+			toReturn->addArgument((SGSExpression*)exp1);
+			toReturn->addArgument((SGSExpression*)exp2);
+			return toReturn;
+		}
 	}
 	void addStatement(void* p)
 	{

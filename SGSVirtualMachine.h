@@ -24,6 +24,8 @@ public:
 	void registerFunction(std::string name,SGSValue (*pfunc)(SGSValue arg));
 	inline SGSStackFrame& getFrameStackBottom(){return *frameStack.front();}
 	inline SGSStackFrame& getFrameStackTop(){return *frameStack.back();}
+	SGSValue getValue(int id);
+	SGSValue getValue(std::string name);
 	int run();
 	SGSValue runExpression(SGSExpression* expression);
 	int runStatement(SGSStatement* statement);

@@ -36,6 +36,10 @@ SGSStatementStackFrameBase* SGSEmptyStatement::getStackFrame()
 {
 	return new SGSThroughStackFrame();
 }
+int SGSEmptyStatement::run()
+{
+	return 0;
+}
 std::string SGSEmptyStatement::getDebugString()
 {
 	std::string toReturn="Type : STEmpty\n";
@@ -110,6 +114,8 @@ SGSVariableStatement::SGSVariableStatement(int varId,SGSExpression* exp)
 	: expression(exp)
 	, variableId(varId)
 {
+	if (NULL==exp)
+		expression=new SGSLiteralExpression();
 }
 SGSVariableStatement::~SGSVariableStatement(void)
 {
@@ -125,7 +131,7 @@ SGSStatementStackFrameBase* SGSVariableStatement::getStackFrame()
 }
 int SGSVariableStatement::run()
 {
-	// TODO;
+	s_virtualMachine->getFrameStackTop().registerValue(variableId,s_virtualMachine->runExpression(expression));
 	return 0;
 }
 std::string SGSVariableStatement::getDebugString()
@@ -166,8 +172,10 @@ StatementType SGSIfxStatement::getStatementType()
 }
 int SGSIfxStatement::run()
 {
-	// TODO;
-	return 0;
+	if (s_virtualMachine->runExpression(expression))
+		return s_virtualMachine->runStatement(statement_true);
+	else
+		return s_virtualMachine->runStatement(statement_false);
 }
 std::string SGSIfxStatement::getDebugString()
 {
@@ -212,7 +220,12 @@ StatementType SGSForStatement::getStatementType()
 }
 int SGSForStatement::run()
 {
-	// TODO;
+	s_virtualMachine->runExpression(expressionBefore);
+	while (s_virtualMachine->runExpression(expressionCheck))
+	{
+		s_virtualMachine->runStatement(statement);
+		s_virtualMachine->runExpression(expressionEveryTurn);
+	}
 	return 0;
 }
 std::string SGSForStatement::getDebugString()
@@ -287,5 +300,37 @@ std::string SGSDoStatement::getDebugString()
 	toReturn += "	Statement : \n";
 	toReturn += addTab(addTab(statement->getDebugString()));
 	toReturn+="Endof : STDo\n";
+	return toReturn;
+}
+
+SGSReturnStatement::SGSReturnStatement()
+	: expression(new SGSLiteralExpression())
+{
+}
+SGSReturnStatement::SGSReturnStatement(SGSExpression* exp)
+	: expression(exp)
+{
+}
+SGSReturnStatement::~SGSReturnStatement(void)
+{
+	delete expression;
+}
+StatementType SGSReturnStatement::getStatementType()
+{
+	return STReturn;
+}
+SGSStatementStackFrameBase* SGSReturnStatement::getStackFrame()
+{
+	return new SGSThroughStackFrame();
+}
+int SGSReturnStatement::run()
+{
+	return s_virtualMachine->runExpression(expression);
+}
+std::string SGSReturnStatement::getDebugString()
+{
+	std::string toReturn="Type : STReturn\n";
+	toReturn+=addTab(expression->getDebugString());
+	toReturn+="Endof : STExpression\n";
 	return toReturn;
 }

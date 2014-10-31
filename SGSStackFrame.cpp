@@ -11,6 +11,14 @@ SGSStackFrame::~SGSStackFrame(void)
 {
 	std::for_each(variables.begin(),variables.end(),[](std::pair<int,SGSValue*> p){delete p.second;});
 }
+void SGSStackFrame::registerValue(int id)
+{
+	getNewValue(id);
+}
+void SGSStackFrame::registerValue(int id,SGSValue value)
+{
+	*(getNewValue(id))=value;
+}
 SGSValue* SGSStackFrame::getOldValue(int id)
 {
 	std::map<int,SGSValue*>::iterator value=variables.find(id);
@@ -31,11 +39,6 @@ SGSValue* SGSStackFrame::getNewValue(int id)
 SGSValue* SGSAncestorStackFrame::getValue(int id)
 {
 	return getNewValue(id);
-}
-
-void SGSStatementStackFrameBase::registerValue(int id,SGSValue value)
-{
-	*(getNewValue(id))=value;
 }
 
 SGSValue* SGSFunctionStackFrame::getValue(int id)

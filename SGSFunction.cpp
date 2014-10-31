@@ -5,11 +5,11 @@
 #include "SGSValue.h"
 #include "SGSVirtualMachine.h"
 
-std::string addTab(std::string &strIn);
 namespace NullObjects
 {
 SGSFunction r_nullFunction;
 }
+std::string addTab(std::string &strIn);
 SGSFunction* nullFunction = &NullObjects::r_nullFunction;
 
 SGSParameters::SGSParameters(void)
@@ -71,11 +71,6 @@ std::string SGSArguments::getDebugString()
 	return toReturn;
 }
 
-//SGSFunction::SGSFunction()
-//	: parameter(NULL)
-//	, statements(new SGSEmptyStatement)
-//{
-//}
 SGSFunction::SGSFunction(SGSStatement *sta,SGSParameters *param)
 	: parameter(param)
 	, statements(sta)
@@ -87,6 +82,11 @@ SGSFunction::~SGSFunction(void)
 {
 	delete parameter;
 	delete statements;
+}
+SGSValue SGSFunction::run()
+{
+	s_virtualMachine->runStatement(statements);
+	return SGSValue();
 }
 std::string SGSFunction::getDebugString()
 {
@@ -108,11 +108,6 @@ std::string SGSFunction::getDebugString()
 	toReturn+="Endof : FunctionDefinition\n";
 	return toReturn;
 }
-SGSValue SGSFunction::run(SGSArguments *args)
-{
-	s_virtualMachine->runStatement(statements);
-	return SGSValue();
-}
 
 SGSNativeFunction::SGSNativeFunction(SGSValue (*sta)(SGSValue))
 	: SGSFunction(NULL)
@@ -124,14 +119,11 @@ SGSNativeFunction::~SGSNativeFunction(void)
 	delete parameter;
 	delete statements;
 }
+SGSValue SGSNativeFunction::run()
+{
+	return pfunc(s_virtualMachine->getValue("function"));
+}
 std::string SGSNativeFunction::getDebugString()
 {
 	return "Type : NFunction\n";
-}
-SGSValue SGSNativeFunction::run(SGSArguments *args)
-{
-	if (!args||args->count()==0)
-		return pfunc(SGSValue());
-	else
-		return pfunc(s_virtualMachine->runExpression((*args)[0]));
 }

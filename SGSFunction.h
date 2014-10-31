@@ -44,7 +44,7 @@ public:
 	//SGSFunction();
 	SGSFunction(SGSStatement *sta=NULL,SGSParameters *param=new SGSParameters());
 	~SGSFunction(void);
-	virtual SGSValue run(SGSArguments *args);
+	virtual SGSValue run();
 	inline SGSParameters *getParameter(){return parameter;}
 public:
 	virtual std::string getDebugString();
@@ -56,7 +56,7 @@ protected:
 public:
 	SGSNativeFunction(SGSValue (*sta)(SGSValue));
 	~SGSNativeFunction(void);
-	virtual SGSValue run(SGSArguments *args);
+	virtual SGSValue run();
 public:
 	virtual std::string getDebugString();
 };

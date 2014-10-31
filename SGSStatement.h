@@ -3,7 +3,8 @@
 enum StatementType
 {
 	STEmpty,STExpression,STStatementBlock,STVariable,
-	STIf,STIfx,STFor,STWhile,STDo
+	STIf,STIfx,STFor,STWhile,STDo,
+	STReturn,
 };
 
 class SGSExpression;
@@ -28,6 +29,7 @@ public:
 	virtual ~SGSEmptyStatement(void);
 	virtual StatementType getStatementType();
 	virtual SGSStatementStackFrameBase* getStackFrame();
+	virtual int run();
 public:
 	virtual std::string getDebugString();
 };
@@ -129,6 +131,21 @@ public:
 	SGSDoStatement(SGSExpression *exp,SGSStatement *sta);
 	virtual ~SGSDoStatement(void);
 	virtual StatementType getStatementType();
+	virtual int run();
+public:
+	virtual std::string getDebugString();
+};
+
+class SGSReturnStatement : public SGSStatement
+{
+private:
+	SGSExpression *expression;
+public:
+	SGSReturnStatement();
+	SGSReturnStatement(SGSExpression*);
+	virtual ~SGSReturnStatement(void);
+	virtual StatementType getStatementType();
+	virtual SGSStatementStackFrameBase* getStackFrame();
 	virtual int run();
 public:
 	virtual std::string getDebugString();

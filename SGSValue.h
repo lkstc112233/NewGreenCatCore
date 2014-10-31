@@ -46,5 +46,7 @@ public:
 	SGSValue operatorSub(SGSValue &exp);
 	SGSValue operatorMul(SGSValue &exp);
 	SGSValue operatorDiv(SGSValue &exp);
+	SGSValue operatorMore(SGSValue &exp);
+	SGSValue operatorLess(SGSValue &exp);
 };
 

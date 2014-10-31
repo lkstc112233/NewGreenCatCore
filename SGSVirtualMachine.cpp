@@ -48,6 +48,15 @@ void SGSVirtualMachine::popFrame()
 	}
 }
 
+SGSValue SGSVirtualMachine::getValue(int id)
+{
+	return getFrameStackTop().getValue(id);
+}
+SGSValue SGSVirtualMachine::getValue(std::string name)
+{
+	return getFrameStackTop().getValue(m_analyzer.getIdentifierId(name.c_str()));
+}
+
 int SGSVirtualMachine::run()
 {
 	std::for_each(m_analyzer.getStatements().begin(),m_analyzer.getStatements().end()
@@ -84,9 +93,14 @@ SGSValue SGSVirtualMachine::runFunction(SGSFunction* function,SGSArguments *args
 	frame->setParentFrame(&getFrameStackTop());
 	int sumMax=std::max(args->count(),function->getParameter()->count());
 	for (int i=0;i<sumMax;++i)
-		frame->registerValue((*function->getParameter())[i],this->runExpression((*args)[i]));
+	{
+		SGSValue result=this->runExpression((*args)[i]);
+		if (i==0)
+			frame->registerValue(m_analyzer.getIdentifierId("function"),result);
+		frame->registerValue((*function->getParameter())[i],result);
+	}
 	pushFrame(frame);
-	SGSValue result=function->run(args);
+	SGSValue result=function->run();
 	popFrame();
 	return result;
 }
