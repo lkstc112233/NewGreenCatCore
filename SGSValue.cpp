@@ -12,6 +12,13 @@ SGSValue::SGSValue(const SGSValue& c)
 	: valueStorage(c.valueStorage)
 	, valueType(c.valueType)
 {
+	switch (valueType)
+	{
+	case VTString:
+		valueStorage.stringValue=new std::string(*valueStorage.stringValue);
+	default:
+		break;
+	}
 }
 SGSValue::SGSValue()
 	: valueType(VTNull)
@@ -167,6 +174,20 @@ SGSValue::operator SGSFunction*()
 	default:
 		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
 	}
+}
+
+SGSValue& SGSValue::operator=(const SGSValue& v)
+{
+	valueStorage=v.valueStorage;
+	valueType=v.valueType;
+	switch (valueType)
+	{
+	case VTString:
+		valueStorage.stringValue=new std::string(*valueStorage.stringValue);
+	default:
+		break;
+	}
+	return *this;
 }
 
 SGSValue SGSValue::operatorAssign(SGSValue &exp)

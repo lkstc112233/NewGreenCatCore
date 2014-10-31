@@ -33,6 +33,11 @@ SGSValue* SGSAncestorStackFrame::getValue(int id)
 	return getNewValue(id);
 }
 
+void SGSStatementStackFrameBase::registerValue(int id,SGSValue value)
+{
+	*(getNewValue(id))=value;
+}
+
 SGSValue* SGSFunctionStackFrame::getValue(int id)
 {
 	SGSValue* toReturn=getOldValue(id);

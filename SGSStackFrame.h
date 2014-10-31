@@ -30,6 +30,7 @@ protected:
 	SGSStackFrame* parent;
 public:
 	void setParentFrame(SGSStackFrame* f){ parent=f; }
+	void registerValue(int id,SGSValue value);
 	virtual SGSValue* getValueThrough(int id){return parent->getValueThrough(id);}
 };
 

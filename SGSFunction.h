@@ -13,6 +13,9 @@ public:
 	SGSParameters(void);
 	~SGSParameters(void);
 	void addParameter(int argumentId);
+	int count(){return argumentsIds.size();}
+	inline std::vector<int>& getArgumentsIds(){return argumentsIds;}
+	int operator[](int i);
 public:
 	virtual std::string getDebugString();
 };
@@ -38,10 +41,11 @@ protected:
 	SGSParameters *parameter;
 	SGSStatement *statements;
 public:
-	SGSFunction();
-	SGSFunction(SGSStatement *sta,SGSParameters *param=NULL);
+	//SGSFunction();
+	SGSFunction(SGSStatement *sta=NULL,SGSParameters *param=new SGSParameters());
 	~SGSFunction(void);
 	virtual SGSValue run(SGSArguments *args);
+	inline SGSParameters *getParameter(){return parameter;}
 public:
 	virtual std::string getDebugString();
 };

@@ -1,7 +1,8 @@
 
-function r ()
+function r(k)
 {
 printf("Hello world!");
+printf(k);
 };
 
-r();
+r(6);

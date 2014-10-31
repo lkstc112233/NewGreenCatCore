@@ -40,6 +40,7 @@ public:
 	operator long double();
 	operator std::string();
 	operator SGSFunction*();
+	SGSValue& operator=(const SGSValue& v);
 	SGSValue operatorAssign(SGSValue &exp);
 	SGSValue operatorAdd(SGSValue &exp);
 	SGSValue operatorSub(SGSValue &exp);

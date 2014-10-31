@@ -1,6 +1,7 @@
 #include "StdAfx.h"
 
 #include <algorithm>
+#include <cstdlib>
 
 #include "SGSVirtualMachine.h"
 #include "SGSStackFrame.h"
@@ -81,8 +82,10 @@ SGSValue SGSVirtualMachine::runFunction(SGSFunction* function,SGSArguments *args
 {
 	SGSStatementStackFrameBase* frame=new SGSFunctionStackFrame();
 	frame->setParentFrame(&getFrameStackTop());
+	int sumMax=std::max(args->count(),function->getParameter()->count());
+	for (int i=0;i<sumMax;++i)
+		frame->registerValue((*function->getParameter())[i],this->runExpression((*args)[i]));
 	pushFrame(frame);
-	// put args;
 	SGSValue result=function->run(args);
 	popFrame();
 	return result;

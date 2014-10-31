@@ -22,6 +22,14 @@ void SGSParameters::addParameter(int argumentId)
 {
 	argumentsIds.push_back(argumentId);
 }
+int SGSParameters::operator[](int i)
+{
+	if (i<0)
+		return -1;
+	if (static_cast<int>(argumentsIds.size())>i)
+		return argumentsIds[i];
+	return -1;
+}
 std::string SGSParameters::getDebugString()
 {
 	std::string toReturn;
@@ -51,7 +59,7 @@ SGSExpression* SGSArguments::operator[](int i)
 {
 	if (i<0)
 		return nullExpression;
-	if (expressions.size()>i)
+	if (static_cast<int>(expressions.size())>i)
 		return expressions[i];
 	return nullExpression;
 }
@@ -63,15 +71,17 @@ std::string SGSArguments::getDebugString()
 	return toReturn;
 }
 
-SGSFunction::SGSFunction()
-	: parameter(NULL)
-	, statements(new SGSEmptyStatement)
-{
-}
+//SGSFunction::SGSFunction()
+//	: parameter(NULL)
+//	, statements(new SGSEmptyStatement)
+//{
+//}
 SGSFunction::SGSFunction(SGSStatement *sta,SGSParameters *param)
 	: parameter(param)
 	, statements(sta)
 {
+	if (!sta)
+		statements=new SGSEmptyStatement;
 }
 SGSFunction::~SGSFunction(void)
 {
@@ -105,7 +115,7 @@ SGSValue SGSFunction::run(SGSArguments *args)
 }
 
 SGSNativeFunction::SGSNativeFunction(SGSValue (*sta)(SGSValue))
-	: SGSFunction(NULL,NULL)
+	: SGSFunction(NULL)
 	, pfunc(sta)
 {
 }
