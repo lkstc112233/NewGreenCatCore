@@ -86,7 +86,7 @@ SGSFunction::~SGSFunction(void)
 SGSValue SGSFunction::run()
 {
 	s_virtualMachine->runStatement(statements);
-	return SGSValue();
+	return s_virtualMachine->getReturnValue();
 }
 std::string SGSFunction::getDebugString()
 {

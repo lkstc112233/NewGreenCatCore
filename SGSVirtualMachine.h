@@ -18,6 +18,10 @@ private:
 	std::vector<SGSFunction*> nativeFunctions;
 	void pushFrame(SGSStackFrame *f);
 	void popFrame();
+	bool returning;
+	bool breaking;
+	bool continuing;
+	SGSValue* returnValue;
 public:
 	SGSVirtualMachine(SGSAnalyzer* analyzer);
 	~SGSVirtualMachine(void);
@@ -32,6 +36,14 @@ public:
 	SGSValue runFunction(int id,SGSArguments *args);
 	SGSValue runFunction(std::string functionName,SGSArguments *args);
 	SGSValue runFunction(SGSFunction* function,SGSArguments *args);
+	void setContinue();
+	void setBreak();
+	void setReturn(SGSValue retValue);
+	inline bool isReturning(){return returning;}
+	inline bool isBreaking(){return breaking;}
+	inline bool isContinuing(){return continuing;}
+	inline bool isSkipping(){return isReturning()||isBreaking()||isContinuing();}
+	SGSValue getReturnValue();
 };
 
 SGSVirtualMachine* createNewVirtualMachine(SGSAnalyzer *analyzer);

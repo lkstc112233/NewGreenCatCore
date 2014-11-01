@@ -61,3 +61,11 @@ SGSValue* SGSThroughStackFrame::getValue(int id)
 {
 	return parent->getValue(id);
 }
+void SGSThroughStackFrame::registerValue(int id)
+{
+	parent->registerValue(id);
+}
+void SGSThroughStackFrame::registerValue(int id,SGSValue value)
+{
+	parent->registerValue(id,value);
+}

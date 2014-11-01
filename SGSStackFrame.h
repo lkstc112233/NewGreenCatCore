@@ -13,8 +13,8 @@ protected:
 public:
 	SGSStackFrame(void);
 	virtual ~SGSStackFrame(void);
-	void registerValue(int id);
-	void registerValue(int id,SGSValue value);
+	virtual void registerValue(int id);
+	virtual void registerValue(int id,SGSValue value);
 	virtual SGSValue* getValue(int id)=0;
 	virtual SGSValue* getValueThrough(int id)=0;
 };
@@ -51,4 +51,6 @@ class SGSThroughStackFrame : public SGSStatementStackFrameBase
 {
 public:
 	virtual SGSValue* getValue(int id);
+	virtual void registerValue(int id);
+	virtual void registerValue(int id,SGSValue value);
 };

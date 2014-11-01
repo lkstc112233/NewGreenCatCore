@@ -20,7 +20,11 @@ SGSVirtualMachine* createNewVirtualMachine(SGSAnalyzer *analyzer)
 
 SGSVirtualMachine::SGSVirtualMachine(SGSAnalyzer* analyzer)
 	: m_analyzer(*analyzer)
+	, returning(false)
+	, breaking(false)
+	, continuing(false)
 {
+	returnValue=NULL;
 	frameStack.push_back(new SGSAncestorStackFrame);
 }
 SGSVirtualMachine::~SGSVirtualMachine(void)
@@ -103,4 +107,27 @@ SGSValue SGSVirtualMachine::runFunction(SGSFunction* function,SGSArguments *args
 	SGSValue result=function->run();
 	popFrame();
 	return result;
+}
+void SGSVirtualMachine::setContinue()
+{
+	//TODO
+}
+void SGSVirtualMachine::setBreak()
+{
+	//TODO
+}
+void SGSVirtualMachine::setReturn(SGSValue retValue)
+{
+	returning=true;
+	if (returnValue)
+		delete returnValue;
+	returnValue=new SGSValue(retValue);
+}
+SGSValue SGSVirtualMachine::getReturnValue()
+{
+	returning=false;
+	if (returnValue)
+		return *returnValue;
+	else
+		return SGSValue();
 }

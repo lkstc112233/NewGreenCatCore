@@ -64,6 +64,8 @@ SGSStatementStackFrameBase* SGSExpressionStatement::getStackFrame()
 }
 int SGSExpressionStatement::run()
 {
+	if (s_virtualMachine->isSkipping())
+		return 0;
 	return s_virtualMachine->runExpression(expression);
 }
 std::string SGSExpressionStatement::getDebugString()
@@ -93,7 +95,12 @@ int SGSStatementBlockStatement::run()
 {
 	try
 	{
-		std::for_each(statements.begin(),statements.end(),[](SGSStatement* s){s_virtualMachine->runStatement(s);});
+		std::for_each(statements.begin(),statements.end(),[](SGSStatement* s)
+		{
+			if (s_virtualMachine->isSkipping())
+				return;
+			s_virtualMachine->runStatement(s);
+		});
 	}
 	catch(SGSWrongStatementException e)
 	{
@@ -131,6 +138,8 @@ SGSStatementStackFrameBase* SGSVariableStatement::getStackFrame()
 }
 int SGSVariableStatement::run()
 {
+	if (s_virtualMachine->isSkipping())
+		return 0;
 	s_virtualMachine->getFrameStackTop().registerValue(variableId,s_virtualMachine->runExpression(expression));
 	return 0;
 }
@@ -172,6 +181,8 @@ StatementType SGSIfxStatement::getStatementType()
 }
 int SGSIfxStatement::run()
 {
+	if (s_virtualMachine->isSkipping())
+		return 0;
 	if (s_virtualMachine->runExpression(expression))
 		return s_virtualMachine->runStatement(statement_true);
 	else
@@ -220,11 +231,18 @@ StatementType SGSForStatement::getStatementType()
 }
 int SGSForStatement::run()
 {
-	s_virtualMachine->runExpression(expressionBefore);
-	while (s_virtualMachine->runExpression(expressionCheck))
+	for (s_virtualMachine->runExpression(expressionBefore);
+		s_virtualMachine->runExpression(expressionCheck);
+		s_virtualMachine->runExpression(expressionEveryTurn))
 	{
+		if (s_virtualMachine->isSkipping())
+			if (s_virtualMachine->isBreaking())
+				break;
+			else if(s_virtualMachine->isContinuing())
+				continue;
+			else
+				return 0;
 		s_virtualMachine->runStatement(statement);
-		s_virtualMachine->runExpression(expressionEveryTurn);
 	}
 	return 0;
 }
@@ -259,7 +277,17 @@ StatementType SGSWhileStatement::getStatementType()
 }
 int SGSWhileStatement::run()
 {
-	// TODO;
+	while (s_virtualMachine->runExpression(expressionCheck))
+	{
+		if (s_virtualMachine->isSkipping())
+			if (s_virtualMachine->isBreaking())
+				break;
+			else if(s_virtualMachine->isContinuing())
+				continue;
+			else
+				return 0;
+		s_virtualMachine->runStatement(statement);
+	}
 	return 0;
 }
 std::string SGSWhileStatement::getDebugString()
@@ -289,7 +317,18 @@ StatementType SGSDoStatement::getStatementType()
 }
 int SGSDoStatement::run()
 {
-	// TODO;
+	do
+	{
+		if (s_virtualMachine->isSkipping())
+			if (s_virtualMachine->isBreaking())
+				break;
+			else if(s_virtualMachine->isContinuing())
+				continue;
+			else
+				return 0;
+		s_virtualMachine->runStatement(statement);
+	}
+	while (s_virtualMachine->runExpression(expressionCheck));
 	return 0;
 }
 std::string SGSDoStatement::getDebugString()
@@ -325,7 +364,10 @@ SGSStatementStackFrameBase* SGSReturnStatement::getStackFrame()
 }
 int SGSReturnStatement::run()
 {
-	return s_virtualMachine->runExpression(expression);
+	if (s_virtualMachine->isSkipping())
+		return 0;
+	s_virtualMachine->setReturn(s_virtualMachine->runExpression(expression));
+	return 0;
 }
 std::string SGSReturnStatement::getDebugString()
 {
