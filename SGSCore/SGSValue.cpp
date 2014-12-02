@@ -1,5 +1,7 @@
 #include "StdAfx.h"
 
+#pragma warning (disable: 4800)
+
 #include <cstdlib>
 #include <algorithm>
 
@@ -7,6 +9,7 @@
 #include "SGSStrings.h"
 #include "SGSExceptions.h"
 #include "SGSFunction.h"
+#include "SGSVirtualMachine.h"
 
 SGSValue::SGSValue(const SGSValue& c)
 	: valueStorage(c.valueStorage)
@@ -16,6 +19,8 @@ SGSValue::SGSValue(const SGSValue& c)
 	{
 	case VTString:
 		valueStorage.stringValue=new std::string(*valueStorage.stringValue);
+	case VTArray:
+		valueStorage.arrayValue=new std::map<int,SGSValue>(*valueStorage.arrayValue);
 	default:
 		break;
 	}
@@ -54,12 +59,25 @@ SGSValue::SGSValue(SGSValue* val)
 {
 	valueStorage.leftSgsValue=val;
 }
+SGSValue::SGSValue(std::map<int,SGSValue>& list)
+	: valueType(VTArray)
+{
+	valueStorage.arrayValue=new std::map<int,SGSValue>(list);
+}
 SGSValue::~SGSValue(void)
+{
+	clearStorage();
+}
+
+void SGSValue::clearStorage(void)
 {
 	switch(valueType)
 	{
 	case VTString:
 		delete valueStorage.stringValue;
+		break;
+	case VTArray:
+		delete valueStorage.arrayValue;
 		break;
 	default:
 		break;
@@ -82,8 +100,8 @@ SGSValue::operator bool()
 		return false;
 	case VTFunction:
 		return true;
-//	case ARRAY:
-//		return static_cast<bool>(valueStorage.Array->size());
+	case VTArray:
+		return static_cast<bool>(valueStorage.arrayValue->size());
 	case VTLeftValue:
 		return *valueStorage.leftSgsValue;
 	default:
@@ -104,8 +122,8 @@ SGSValue::operator long long()
 		return std::stoll(*valueStorage.stringValue);
 	case VTFunction:
 		return 1;
-//	case ARRAY:
-//		return valueStorage.Array->size();
+	case VTArray:
+		return 0;
 	case VTLeftValue:
 		return *valueStorage.leftSgsValue;
 	default:
@@ -126,8 +144,8 @@ SGSValue::operator long double()
 		return strtod(valueStorage.stringValue->c_str(),NULL);
 	case VTFunction:
 		return 1;
-//	case ARRAY:
-//		return valueStorage.Array->size();
+	case VTArray:
+		return 0;
 	case VTLeftValue:
 		return *valueStorage.leftSgsValue;
 	default:
@@ -148,8 +166,8 @@ SGSValue::operator std::string()
 		return *valueStorage.stringValue;
 	case VTFunction:
 		return "Function";
-//	case ARRAY:
-//		return "Array";
+	case VTArray:
+		return "Array";
 	case VTLeftValue:
 		return *valueStorage.leftSgsValue;
 	default:
@@ -164,16 +182,70 @@ SGSValue::operator SGSFunction*()
 	case VTInteger:
 	case VTFloat:
 	case VTString:
+	case VTArray://?
 		return nullFunction;
 	case VTFunction:
 		return valueStorage.functionValue;
-//	case ARRAY:
-//		return "Array";
 	case VTLeftValue:
 		return *valueStorage.leftSgsValue;
 	default:
 		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
 	}
+}
+
+SGSValue& SGSValue::convert(ValueType type)
+{
+	if(type==valueType)
+		return *this;
+	switch(type)
+	{
+	case VTNull:
+		clearStorage();
+		valueType=VTNull;
+		break;
+	case VTInteger:
+		{
+			auto temp=this->operator long long();
+			clearStorage();
+			valueType=VTInteger;
+			valueStorage.integerValue=temp;
+			break;
+		}
+	case VTFloat:
+		{
+			auto temp=this->operator long double();
+			clearStorage();
+			valueType=VTFloat;
+			valueStorage.floatValue=temp;
+			break;
+		}
+	case VTString:
+		{
+			auto temp=this->operator std::string();
+			clearStorage();
+			valueType=VTString;
+			valueStorage.stringValue=new decltype(temp)(temp);
+			break;
+		}
+	case VTFunction:
+		{
+			clearStorage();
+			valueType=VTFunction;
+			valueStorage.functionValue=nullFunction;
+			break;
+		}
+	case VTArray:
+		{
+			clearStorage();
+			valueType=VTArray;
+			valueStorage.arrayValue=new std::map<int,SGSValue>();
+			break;
+		}
+	case VTLeftValue:
+	default:
+		throw SGSInvalidTypeException("SGSValue::convert");
+	}
+	return *this;
 }
 
 SGSValue& SGSValue::operator=(const SGSValue& v)
@@ -184,10 +256,27 @@ SGSValue& SGSValue::operator=(const SGSValue& v)
 	{
 	case VTString:
 		valueStorage.stringValue=new std::string(*valueStorage.stringValue);
+	case VTArray:
+		valueStorage.arrayValue=new std::map<int,SGSValue>(*valueStorage.arrayValue);
 	default:
 		break;
 	}
 	return *this;
+}
+
+SGSValue SGSValue::operatorDot(int id)
+{
+	convert(VTArray);
+	auto result=valueStorage.arrayValue->find(id);
+	if (result!=valueStorage.arrayValue->end())
+		return SGSValue(&result->second);
+	valueStorage.arrayValue->insert(std::make_pair(id,SGSValue()));
+	result=valueStorage.arrayValue->find(id);
+	return SGSValue(&result->second);
+}
+SGSValue SGSValue::operatorDot(SGSValue &exp)
+{
+	return operatorDot(s_virtualMachine->getIdentifierId(exp.operator std::string()));
 }
 
 SGSValue SGSValue::operatorAssign(SGSValue &exp)
@@ -371,6 +460,26 @@ SGSValue SGSValue::operatorMore(SGSValue &exp)
 		return *this;
 	case VTLeftValue:
 		return valueStorage.leftSgsValue->operatorMore(exp);
+	default:
+		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
+	}
+}
+SGSValue SGSValue::operatorEqual(SGSValue &exp)
+{
+	switch(valueType)
+	{
+	case VTNull:
+		return VTNull==exp.valueType?1.l:0.l;
+	case VTString:
+		return SGSValue(*valueStorage.stringValue==exp.operator std::string()?1.l:0.l);
+	case VTInteger:
+		return SGSValue(valueStorage.integerValue==exp.operator long long()?1.l:0.l);
+	case VTFloat:
+		return SGSValue(valueStorage.floatValue==exp.operator long double()?1.l:0.l);
+	case VTFunction:
+		return *this;
+	case VTLeftValue:
+		return valueStorage.leftSgsValue->operatorEqual(exp);
 	default:
 		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
 	}

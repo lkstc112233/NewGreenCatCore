@@ -37,12 +37,15 @@ extern "C" {
 	void* makeFunctionWithoutParameters(void* statements);
 	void* getFunctionCallFunctionWithArguments(void* function,void* arguments);
 	void* getFunctionCallFunctionWithoutArguments(void* function);
+	void* getDotOperatorExpressionWithIdentifier(void* exp1,int exp2);
+	void* getDotOperatorExpression(void* exp1,void* exp2);
 	void* getAddOperatorExpression(void* exp1,void* exp2);
 	void* getSubOperatorExpression(void* exp1,void* exp2);
 	void* getMulOperatorExpression(void* exp1,void* exp2);
 	void* getDivOperatorExpression(void* exp1,void* exp2);
 	void* getLessOperatorExpression(void* exp1,void* exp2);
 	void* getMoreOperatorExpression(void* exp1,void* exp2);
+	void* getEqualOperatorExpression(void* exp1,void* exp2);
 	void* getAssignOperatorExpression(void* exp1,void* exp2);
 	void addStatement(void* p);
 	void addFunction(void* p);

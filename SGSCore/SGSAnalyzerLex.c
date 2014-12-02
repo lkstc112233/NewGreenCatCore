@@ -417,6 +417,9 @@ char *yytext;
 #define INITIAL 0
 #line 2 "SGSAnalyzer.l"
 #include <stdlib.h>
+
+#pragma warning (disable: 4996) 
+
 #include "SGSAnalyzerYacc.h"
 #include "SGSAnalyzerWarper.h"
 int yywrap(void);
@@ -424,7 +427,7 @@ int yywrap(void);
 #define COMMENT_MULTIPLE_LINES 2
 #define STRING_LITERAL_STATE 3
 
-#line 428 "SGSAnalyzerLex.c"
+#line 431 "SGSAnalyzerLex.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -575,9 +578,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 8 "SGSAnalyzer.l"
+#line 11 "SGSAnalyzer.l"
 
-#line 581 "SGSAnalyzerLex.c"
+#line 584 "SGSAnalyzerLex.c"
 
 	if ( yy_init )
 		{
@@ -662,220 +665,220 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "SGSAnalyzer.l"
+#line 12 "SGSAnalyzer.l"
 return LEFT_PAREN;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 10 "SGSAnalyzer.l"
+#line 13 "SGSAnalyzer.l"
 return RIGHT_PAREN;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 11 "SGSAnalyzer.l"
+#line 14 "SGSAnalyzer.l"
 return LEFT_BRACE;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 12 "SGSAnalyzer.l"
+#line 15 "SGSAnalyzer.l"
 return RIGHT_BRACE;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 13 "SGSAnalyzer.l"
+#line 16 "SGSAnalyzer.l"
 return IF;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 14 "SGSAnalyzer.l"
+#line 17 "SGSAnalyzer.l"
 return ELSE;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 15 "SGSAnalyzer.l"
+#line 18 "SGSAnalyzer.l"
 return FOR;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 16 "SGSAnalyzer.l"
+#line 19 "SGSAnalyzer.l"
 return WHILE;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 17 "SGSAnalyzer.l"
+#line 20 "SGSAnalyzer.l"
 return DO;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 18 "SGSAnalyzer.l"
+#line 21 "SGSAnalyzer.l"
 return FUNCTION;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 19 "SGSAnalyzer.l"
+#line 22 "SGSAnalyzer.l"
 return VAR;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 20 "SGSAnalyzer.l"
+#line 23 "SGSAnalyzer.l"
 return RETURN;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 21 "SGSAnalyzer.l"
+#line 24 "SGSAnalyzer.l"
 return ADD;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 22 "SGSAnalyzer.l"
+#line 25 "SGSAnalyzer.l"
 return SUB;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 23 "SGSAnalyzer.l"
+#line 26 "SGSAnalyzer.l"
 return MUL;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 24 "SGSAnalyzer.l"
+#line 27 "SGSAnalyzer.l"
 return DIV;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 25 "SGSAnalyzer.l"
+#line 28 "SGSAnalyzer.l"
 return ASSIGN;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 26 "SGSAnalyzer.l"
+#line 29 "SGSAnalyzer.l"
 return LESS;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 27 "SGSAnalyzer.l"
+#line 30 "SGSAnalyzer.l"
 return MORE;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 28 "SGSAnalyzer.l"
+#line 31 "SGSAnalyzer.l"
 return COMMA;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 29 "SGSAnalyzer.l"
+#line 32 "SGSAnalyzer.l"
 return SEMICOLON;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 30 "SGSAnalyzer.l"
+#line 33 "SGSAnalyzer.l"
 yylval.identifier_id = getIdentifierId(yytext);return IDENTIFIER;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 31 "SGSAnalyzer.l"
+#line 34 "SGSAnalyzer.l"
 yylval.integer_value = strtol(yytext,NULL,10);return INTEGER_LITERAL;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 32 "SGSAnalyzer.l"
+#line 35 "SGSAnalyzer.l"
 yylval.float_value = strtod(yytext,NULL);return DOUBLE_LITERAL;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 33 "SGSAnalyzer.l"
+#line 36 "SGSAnalyzer.l"
 clearStringLiteralCache();BEGIN STRING_LITERAL_STATE;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 34 "SGSAnalyzer.l"
+#line 37 "SGSAnalyzer.l"
 BEGIN COMMENT_SINGLE_LINE;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 35 "SGSAnalyzer.l"
+#line 38 "SGSAnalyzer.l"
 BEGIN COMMENT_MULTIPLE_LINES;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 36 "SGSAnalyzer.l"
+#line 39 "SGSAnalyzer.l"
 lineNumberUp();
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 37 "SGSAnalyzer.l"
+#line 40 "SGSAnalyzer.l"
 ;/* Skipped. */
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 38 "SGSAnalyzer.l"
+#line 41 "SGSAnalyzer.l"
 lineNumberUp();BEGIN INITIAL;
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 39 "SGSAnalyzer.l"
+#line 42 "SGSAnalyzer.l"
 ;/* Skipped. */
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 40 "SGSAnalyzer.l"
+#line 43 "SGSAnalyzer.l"
 BEGIN INITIAL;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 41 "SGSAnalyzer.l"
+#line 44 "SGSAnalyzer.l"
 lineNumberUp();
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 42 "SGSAnalyzer.l"
+#line 45 "SGSAnalyzer.l"
 ;/* Skipped. */
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 43 "SGSAnalyzer.l"
+#line 46 "SGSAnalyzer.l"
 /*yylval.string_value=getStringLiteralCache();*/BEGIN INITIAL;return STRING_LITERAL;
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 44 "SGSAnalyzer.l"
+#line 47 "SGSAnalyzer.l"
 addStringLiteralCharacter('\\');
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 45 "SGSAnalyzer.l"
+#line 48 "SGSAnalyzer.l"
 addStringLiteralCharacter('\n');
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 46 "SGSAnalyzer.l"
+#line 49 "SGSAnalyzer.l"
 addStringLiteralCharacter('\"');
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 47 "SGSAnalyzer.l"
+#line 50 "SGSAnalyzer.l"
 addStringLiteralCharacter('\t');
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 48 "SGSAnalyzer.l"
+#line 51 "SGSAnalyzer.l"
 addStringLiteralCharacter('\'');
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 49 "SGSAnalyzer.l"
+#line 52 "SGSAnalyzer.l"
 lineNumberUp();addStringLiteralCharacter('\n');
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 50 "SGSAnalyzer.l"
+#line 53 "SGSAnalyzer.l"
 addStringLiteralCharacter(yytext[0]);
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 51 "SGSAnalyzer.l"
+#line 54 "SGSAnalyzer.l"
 ECHO;
 	YY_BREAK
-#line 879 "SGSAnalyzerLex.c"
+#line 882 "SGSAnalyzerLex.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMMENT_SINGLE_LINE):
 case YY_STATE_EOF(COMMENT_MULTIPLE_LINES):
@@ -1764,7 +1767,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 51 "SGSAnalyzer.l"
+#line 54 "SGSAnalyzer.l"
 
 int yywrap(void)
 {

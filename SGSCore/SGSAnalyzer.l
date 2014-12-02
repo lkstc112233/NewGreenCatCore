@@ -1,5 +1,8 @@
 %{
 #include <stdlib.h>
+
+#pragma warning (disable: 4996) 
+
 #include "SGSAnalyzerYacc.h"
 #include "SGSAnalyzerWarper.h"
 int yywrap(void);

@@ -151,6 +151,17 @@ extern "C" {
 	{
 		return new SGSFunctionCallExpression((SGSExpression*)function);
 	}
+	void* getDotOperatorExpressionWithIdentifier(void* exp1,int exp2)
+	{
+		return new SGSMemberExpression((SGSExpression*)exp1,exp2);
+	}
+	void* getDotOperatorExpression(void* exp1,void* exp2)
+	{
+		SGSOperateExpression* toReturn=new SGSOperateExpression(OTDot);
+		toReturn->addArgument((SGSExpression*)exp1);
+		toReturn->addArgument((SGSExpression*)exp2);
+		return toReturn;
+	}
 	void* getAddOperatorExpression(void* exp1,void* exp2)
 	{
 		if (((SGSExpression*)exp1)->isLiteral()&&((SGSExpression*)exp2)->isLiteral())
@@ -225,6 +236,18 @@ extern "C" {
 		else
 		{
 			SGSOperateExpression* toReturn=new SGSOperateExpression(OTMore);
+			toReturn->addArgument((SGSExpression*)exp1);
+			toReturn->addArgument((SGSExpression*)exp2);
+			return toReturn;
+		}
+	}
+	void* getEqualOperatorExpression(void* exp1,void* exp2)
+	{
+		if (((SGSExpression*)exp1)->isLiteral()&&((SGSExpression*)exp2)->isLiteral())
+			return *((SGSLiteralExpression*)exp1)==(SGSLiteralExpression*)exp2;
+		else
+		{
+			SGSOperateExpression* toReturn=new SGSOperateExpression(OTEqual);
 			toReturn->addArgument((SGSExpression*)exp1);
 			toReturn->addArgument((SGSExpression*)exp2);
 			return toReturn;

@@ -24,9 +24,11 @@ int yylex(void);
 %left					LESS MORE 
 %left					ADD SUB 
 %left					MUL DIV 
+%left					LEFT_PAREN
+%left					DOT
 %nonassoc				IFX
 %nonassoc				ELSE
-%left					LEFT_PAREN
+%left					DOTED
 
 %%
 final 
@@ -101,16 +103,18 @@ expression
 	{
 		$$ = getFunctionExpression(makeFunctionWithoutParameters($4));
 	}
-	| LEFT_PAREN expression RIGHT_PAREN				{ $$ = $2; }
-	| expression LEFT_PAREN RIGHT_PAREN				{ $$ = getFunctionCallFunctionWithoutArguments($1); }
-	| expression LEFT_PAREN arguments RIGHT_PAREN	{ $$ = getFunctionCallFunctionWithArguments($1,$3); }
-	| expression ADD expression						{ $$ = getAddOperatorExpression($1,$3); }
-	| expression SUB expression						{ $$ = getSubOperatorExpression($1,$3); }
-	| expression MUL expression						{ $$ = getMulOperatorExpression($1,$3); }
-	| expression DIV expression						{ $$ = getDivOperatorExpression($1,$3); }
-	| expression LESS expression					{ $$ = getLessOperatorExpression($1,$3); }
-	| expression MORE expression					{ $$ = getMoreOperatorExpression($1,$3); }
-	| expression ASSIGN expression					{ $$ = getAssignOperatorExpression($1,$3); }
+	| LEFT_PAREN expression RIGHT_PAREN					{ $$ = $2; }
+	| expression LEFT_PAREN RIGHT_PAREN					{ $$ = getFunctionCallFunctionWithoutArguments($1); }
+	| expression LEFT_PAREN arguments RIGHT_PAREN		{ $$ = getFunctionCallFunctionWithArguments($1,$3); }
+	| expression DOT LEFT_PAREN expression RIGHT_PAREN	{ $$ = getDotOperatorExpression($1,$4); }
+	| expression DOT IDENTIFIER							{ $$ = getDotOperatorExpressionWithIdentifier($1,$3); }
+	| expression ADD expression							{ $$ = getAddOperatorExpression($1,$3); }
+	| expression SUB expression							{ $$ = getSubOperatorExpression($1,$3); }
+	| expression MUL expression							{ $$ = getMulOperatorExpression($1,$3); }
+	| expression DIV expression							{ $$ = getDivOperatorExpression($1,$3); }
+	| expression LESS expression						{ $$ = getLessOperatorExpression($1,$3); }
+	| expression MORE expression						{ $$ = getMoreOperatorExpression($1,$3); }
+	| expression ASSIGN expression						{ $$ = getAssignOperatorExpression($1,$3); }
 	;
 
 %%

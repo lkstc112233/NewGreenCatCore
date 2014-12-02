@@ -25,17 +25,23 @@ private:
 public:
 	SGSVirtualMachine(SGSAnalyzer* analyzer);
 	~SGSVirtualMachine(void);
+
 	void registerFunction(std::string name,SGSValue (*pfunc)(SGSValue arg));
+
+	int getIdentifierId(std::string name);
+
 	inline SGSStackFrame& getFrameStackBottom(){return *frameStack.front();}
 	inline SGSStackFrame& getFrameStackTop(){return *frameStack.back();}
 	SGSValue getValue(int id);
 	SGSValue getValue(std::string name);
+
 	int run();
 	SGSValue runExpression(SGSExpression* expression);
 	int runStatement(SGSStatement* statement);
 	SGSValue runFunction(int id,SGSArguments *args);
 	SGSValue runFunction(std::string functionName,SGSArguments *args);
 	SGSValue runFunction(SGSFunction* function,SGSArguments *args);
+
 	void setContinue();
 	void setBreak();
 	void setReturn(SGSValue retValue);

@@ -1,60 +1,74 @@
-Conflict in state 55 between rule 39 and token ASSIGN resolved as shift.
-Conflict in state 55 between rule 39 and token LESS resolved as shift.
-Conflict in state 55 between rule 39 and token MORE resolved as shift.
-Conflict in state 55 between rule 39 and token ADD resolved as shift.
-Conflict in state 55 between rule 39 and token SUB resolved as shift.
-Conflict in state 55 between rule 39 and token MUL resolved as shift.
-Conflict in state 55 between rule 39 and token DIV resolved as shift.
-Conflict in state 55 between rule 39 and token LEFT_PAREN resolved as shift.
-Conflict in state 56 between rule 37 and token ASSIGN resolved as reduce.
-Conflict in state 56 between rule 37 and token LESS resolved as reduce.
-Conflict in state 56 between rule 37 and token MORE resolved as reduce.
-Conflict in state 56 between rule 37 and token ADD resolved as shift.
-Conflict in state 56 between rule 37 and token SUB resolved as shift.
-Conflict in state 56 between rule 37 and token MUL resolved as shift.
-Conflict in state 56 between rule 37 and token DIV resolved as shift.
-Conflict in state 56 between rule 37 and token LEFT_PAREN resolved as shift.
-Conflict in state 57 between rule 38 and token ASSIGN resolved as reduce.
-Conflict in state 57 between rule 38 and token LESS resolved as reduce.
-Conflict in state 57 between rule 38 and token MORE resolved as reduce.
-Conflict in state 57 between rule 38 and token ADD resolved as shift.
-Conflict in state 57 between rule 38 and token SUB resolved as shift.
-Conflict in state 57 between rule 38 and token MUL resolved as shift.
-Conflict in state 57 between rule 38 and token DIV resolved as shift.
-Conflict in state 57 between rule 38 and token LEFT_PAREN resolved as shift.
-Conflict in state 58 between rule 33 and token ASSIGN resolved as reduce.
-Conflict in state 58 between rule 33 and token LESS resolved as reduce.
-Conflict in state 58 between rule 33 and token MORE resolved as reduce.
-Conflict in state 58 between rule 33 and token ADD resolved as reduce.
-Conflict in state 58 between rule 33 and token SUB resolved as reduce.
-Conflict in state 58 between rule 33 and token MUL resolved as shift.
-Conflict in state 58 between rule 33 and token DIV resolved as shift.
-Conflict in state 58 between rule 33 and token LEFT_PAREN resolved as shift.
-Conflict in state 59 between rule 34 and token ASSIGN resolved as reduce.
-Conflict in state 59 between rule 34 and token LESS resolved as reduce.
-Conflict in state 59 between rule 34 and token MORE resolved as reduce.
-Conflict in state 59 between rule 34 and token ADD resolved as reduce.
-Conflict in state 59 between rule 34 and token SUB resolved as reduce.
-Conflict in state 59 between rule 34 and token MUL resolved as shift.
-Conflict in state 59 between rule 34 and token DIV resolved as shift.
-Conflict in state 59 between rule 34 and token LEFT_PAREN resolved as shift.
-Conflict in state 60 between rule 35 and token ASSIGN resolved as reduce.
-Conflict in state 60 between rule 35 and token LESS resolved as reduce.
-Conflict in state 60 between rule 35 and token MORE resolved as reduce.
-Conflict in state 60 between rule 35 and token ADD resolved as reduce.
-Conflict in state 60 between rule 35 and token SUB resolved as reduce.
-Conflict in state 60 between rule 35 and token MUL resolved as reduce.
-Conflict in state 60 between rule 35 and token DIV resolved as reduce.
-Conflict in state 60 between rule 35 and token LEFT_PAREN resolved as shift.
-Conflict in state 61 between rule 36 and token ASSIGN resolved as reduce.
-Conflict in state 61 between rule 36 and token LESS resolved as reduce.
-Conflict in state 61 between rule 36 and token MORE resolved as reduce.
-Conflict in state 61 between rule 36 and token ADD resolved as reduce.
-Conflict in state 61 between rule 36 and token SUB resolved as reduce.
-Conflict in state 61 between rule 36 and token MUL resolved as reduce.
-Conflict in state 61 between rule 36 and token DIV resolved as reduce.
-Conflict in state 61 between rule 36 and token LEFT_PAREN resolved as shift.
-Conflict in state 77 between rule 15 and token ELSE resolved as shift.
+
+
+Terminals which are not used:
+
+   DOTED
+
+
+Conflict in state 56 between rule 41 and token ASSIGN resolved as shift.
+Conflict in state 56 between rule 41 and token LESS resolved as shift.
+Conflict in state 56 between rule 41 and token MORE resolved as shift.
+Conflict in state 56 between rule 41 and token ADD resolved as shift.
+Conflict in state 56 between rule 41 and token SUB resolved as shift.
+Conflict in state 56 between rule 41 and token MUL resolved as shift.
+Conflict in state 56 between rule 41 and token DIV resolved as shift.
+Conflict in state 56 between rule 41 and token LEFT_PAREN resolved as shift.
+Conflict in state 56 between rule 41 and token DOT resolved as shift.
+Conflict in state 57 between rule 39 and token ASSIGN resolved as reduce.
+Conflict in state 57 between rule 39 and token LESS resolved as reduce.
+Conflict in state 57 between rule 39 and token MORE resolved as reduce.
+Conflict in state 57 between rule 39 and token ADD resolved as shift.
+Conflict in state 57 between rule 39 and token SUB resolved as shift.
+Conflict in state 57 between rule 39 and token MUL resolved as shift.
+Conflict in state 57 between rule 39 and token DIV resolved as shift.
+Conflict in state 57 between rule 39 and token LEFT_PAREN resolved as shift.
+Conflict in state 57 between rule 39 and token DOT resolved as shift.
+Conflict in state 58 between rule 40 and token ASSIGN resolved as reduce.
+Conflict in state 58 between rule 40 and token LESS resolved as reduce.
+Conflict in state 58 between rule 40 and token MORE resolved as reduce.
+Conflict in state 58 between rule 40 and token ADD resolved as shift.
+Conflict in state 58 between rule 40 and token SUB resolved as shift.
+Conflict in state 58 between rule 40 and token MUL resolved as shift.
+Conflict in state 58 between rule 40 and token DIV resolved as shift.
+Conflict in state 58 between rule 40 and token LEFT_PAREN resolved as shift.
+Conflict in state 58 between rule 40 and token DOT resolved as shift.
+Conflict in state 59 between rule 35 and token ASSIGN resolved as reduce.
+Conflict in state 59 between rule 35 and token LESS resolved as reduce.
+Conflict in state 59 between rule 35 and token MORE resolved as reduce.
+Conflict in state 59 between rule 35 and token ADD resolved as reduce.
+Conflict in state 59 between rule 35 and token SUB resolved as reduce.
+Conflict in state 59 between rule 35 and token MUL resolved as shift.
+Conflict in state 59 between rule 35 and token DIV resolved as shift.
+Conflict in state 59 between rule 35 and token LEFT_PAREN resolved as shift.
+Conflict in state 59 between rule 35 and token DOT resolved as shift.
+Conflict in state 60 between rule 36 and token ASSIGN resolved as reduce.
+Conflict in state 60 between rule 36 and token LESS resolved as reduce.
+Conflict in state 60 between rule 36 and token MORE resolved as reduce.
+Conflict in state 60 between rule 36 and token ADD resolved as reduce.
+Conflict in state 60 between rule 36 and token SUB resolved as reduce.
+Conflict in state 60 between rule 36 and token MUL resolved as shift.
+Conflict in state 60 between rule 36 and token DIV resolved as shift.
+Conflict in state 60 between rule 36 and token LEFT_PAREN resolved as shift.
+Conflict in state 60 between rule 36 and token DOT resolved as shift.
+Conflict in state 61 between rule 37 and token ASSIGN resolved as reduce.
+Conflict in state 61 between rule 37 and token LESS resolved as reduce.
+Conflict in state 61 between rule 37 and token MORE resolved as reduce.
+Conflict in state 61 between rule 37 and token ADD resolved as reduce.
+Conflict in state 61 between rule 37 and token SUB resolved as reduce.
+Conflict in state 61 between rule 37 and token MUL resolved as reduce.
+Conflict in state 61 between rule 37 and token DIV resolved as reduce.
+Conflict in state 61 between rule 37 and token LEFT_PAREN resolved as shift.
+Conflict in state 61 between rule 37 and token DOT resolved as shift.
+Conflict in state 62 between rule 38 and token ASSIGN resolved as reduce.
+Conflict in state 62 between rule 38 and token LESS resolved as reduce.
+Conflict in state 62 between rule 38 and token MORE resolved as reduce.
+Conflict in state 62 between rule 38 and token ADD resolved as reduce.
+Conflict in state 62 between rule 38 and token SUB resolved as reduce.
+Conflict in state 62 between rule 38 and token MUL resolved as reduce.
+Conflict in state 62 between rule 38 and token DIV resolved as reduce.
+Conflict in state 62 between rule 38 and token LEFT_PAREN resolved as shift.
+Conflict in state 62 between rule 38 and token DOT resolved as shift.
+Conflict in state 81 between rule 15 and token ELSE resolved as shift.
 
 Grammar
 rule 1    final -> statement
@@ -89,13 +103,15 @@ rule 29   expression -> FUNCTION LEFT_PAREN RIGHT_PAREN statement
 rule 30   expression -> LEFT_PAREN expression RIGHT_PAREN
 rule 31   expression -> expression LEFT_PAREN RIGHT_PAREN
 rule 32   expression -> expression LEFT_PAREN arguments RIGHT_PAREN
-rule 33   expression -> expression ADD expression
-rule 34   expression -> expression SUB expression
-rule 35   expression -> expression MUL expression
-rule 36   expression -> expression DIV expression
-rule 37   expression -> expression LESS expression
-rule 38   expression -> expression MORE expression
-rule 39   expression -> expression ASSIGN expression
+rule 33   expression -> expression DOT LEFT_PAREN expression RIGHT_PAREN
+rule 34   expression -> expression DOT IDENTIFIER
+rule 35   expression -> expression ADD expression
+rule 36   expression -> expression SUB expression
+rule 37   expression -> expression MUL expression
+rule 38   expression -> expression DIV expression
+rule 39   expression -> expression LESS expression
+rule 40   expression -> expression MORE expression
+rule 41   expression -> expression ASSIGN expression
 
 Terminals, with rules where they appear
 
@@ -111,40 +127,42 @@ RETURN (263) 20 21
 DOUBLE_LITERAL (264) 22
 INTEGER_LITERAL (265) 23
 STRING_LITERAL (266) 24
-IDENTIFIER (267) 5 6 13 14 25 26 27
-RIGHT_PAREN (268) 15 16 17 18 19 26 27 28 29 30 31 32
+IDENTIFIER (267) 5 6 13 14 25 26 27 34
+RIGHT_PAREN (268) 15 16 17 18 19 26 27 28 29 30 31 32 33
 LEFT_BRACE (269) 10 12
 RIGHT_BRACE (270) 10 12
 SEMICOLON (271) 9 11 13 14 17 19 20 21
 COMMA (272) 6 8
-ASSIGN (273) 14 39
-LESS (274) 37
-MORE (275) 38
-ADD (276) 33
-SUB (277) 34
-MUL (278) 35
-DIV (279) 36
-IFX (280)
-ELSE (281) 16
-LEFT_PAREN (282) 15 16 17 18 19 26 27 28 29 30 31 32
+ASSIGN (273) 14 41
+LESS (274) 39
+MORE (275) 40
+ADD (276) 35
+SUB (277) 36
+MUL (278) 37
+DIV (279) 38
+LEFT_PAREN (280) 15 16 17 18 19 26 27 28 29 30 31 32 33
+DOT (281) 33 34
+IFX (282)
+ELSE (283) 16
+DOTED (284)
 
 Nonterminals, with rules where they appear
 
-final (29)
+final (31)
     on left: 1 2, on right: 2
-statements_list (30)
+statements_list (32)
     on left: 3 4, on right: 4 12
-parameters (31)
+parameters (33)
     on left: 5 6, on right: 6 26 28
-arguments (32)
+arguments (34)
     on left: 7 8, on right: 8 32
-statement (33)
+statement (35)
     on left: 9 10 11 12 13 14 15 16 17 18 19 20 21,
     on right: 1 2 3 4 15 16 17 18 19 26 27 28 29
-expression (34)
-    on left: 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39,
-    on right: 7 8 11 14 15 16 17 18 19 21 30 31 32 33 34 35 36 37 38
-    39
+expression (36)
+    on left: 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+    40 41, on right: 7 8 11 14 15 16 17 18 19 21 30 31 32 33 34 35
+    36 37 38 39 40 41
 
 
 state 0
@@ -343,7 +361,7 @@ state 15
 
     final  ->  final . statement   (rule 2)
 
-    $   	go to state 96
+    $   	go to state 101
     IF  	shift, and go to state 1
     FOR 	shift, and go to state 2
     WHILE	shift, and go to state 3
@@ -377,13 +395,15 @@ state 17
     statement  ->  expression . SEMICOLON   (rule 11)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
     SEMICOLON	shift, and go to state 32
     ASSIGN	shift, and go to state 33
@@ -394,6 +414,7 @@ state 17
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
@@ -409,7 +430,7 @@ state 18
     IDENTIFIER	shift, and go to state 11
     LEFT_PAREN	shift, and go to state 14
 
-    expression	go to state 41
+    expression	go to state 42
 
 
 
@@ -424,7 +445,7 @@ state 19
     IDENTIFIER	shift, and go to state 11
     LEFT_PAREN	shift, and go to state 14
 
-    expression	go to state 42
+    expression	go to state 43
 
 
 
@@ -439,7 +460,7 @@ state 20
     IDENTIFIER	shift, and go to state 11
     LEFT_PAREN	shift, and go to state 14
 
-    expression	go to state 43
+    expression	go to state 44
 
 
 
@@ -447,7 +468,7 @@ state 21
 
     statement  ->  DO statement . WHILE LEFT_PAREN expression RIGHT_PAREN SEMICOLON   (rule 19)
 
-    WHILE	shift, and go to state 44
+    WHILE	shift, and go to state 45
 
 
 
@@ -456,7 +477,7 @@ state 22
     expression  ->  FUNCTION IDENTIFIER . LEFT_PAREN parameters RIGHT_PAREN statement   (rule 26)
     expression  ->  FUNCTION IDENTIFIER . LEFT_PAREN RIGHT_PAREN statement   (rule 27)
 
-    LEFT_PAREN	shift, and go to state 45
+    LEFT_PAREN	shift, and go to state 46
 
 
 
@@ -465,10 +486,10 @@ state 23
     expression  ->  FUNCTION LEFT_PAREN . parameters RIGHT_PAREN statement   (rule 28)
     expression  ->  FUNCTION LEFT_PAREN . RIGHT_PAREN statement   (rule 29)
 
-    IDENTIFIER	shift, and go to state 46
-    RIGHT_PAREN	shift, and go to state 47
+    IDENTIFIER	shift, and go to state 47
+    RIGHT_PAREN	shift, and go to state 48
 
-    parameters	go to state 48
+    parameters	go to state 49
 
 
 
@@ -477,8 +498,8 @@ state 24
     statement  ->  VAR IDENTIFIER . SEMICOLON   (rule 13)
     statement  ->  VAR IDENTIFIER . ASSIGN expression SEMICOLON   (rule 14)
 
-    SEMICOLON	shift, and go to state 49
-    ASSIGN	shift, and go to state 50
+    SEMICOLON	shift, and go to state 50
+    ASSIGN	shift, and go to state 51
 
 
 
@@ -495,15 +516,17 @@ state 26
     statement  ->  RETURN expression . SEMICOLON   (rule 21)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
-    SEMICOLON	shift, and go to state 51
+    SEMICOLON	shift, and go to state 52
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
     MORE	shift, and go to state 35
@@ -512,6 +535,7 @@ state 26
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
@@ -540,11 +564,11 @@ state 28
     STRING_LITERAL	shift, and go to state 10
     IDENTIFIER	shift, and go to state 11
     LEFT_BRACE	shift, and go to state 12
-    RIGHT_BRACE	shift, and go to state 52
+    RIGHT_BRACE	shift, and go to state 53
     SEMICOLON	shift, and go to state 13
     LEFT_PAREN	shift, and go to state 14
 
-    statement	go to state 53
+    statement	go to state 54
     expression	go to state 17
 
 
@@ -562,15 +586,17 @@ state 30
     expression  ->  LEFT_PAREN expression . RIGHT_PAREN   (rule 30)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
-    RIGHT_PAREN	shift, and go to state 54
+    RIGHT_PAREN	shift, and go to state 55
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
     MORE	shift, and go to state 35
@@ -579,6 +605,7 @@ state 30
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
@@ -600,22 +627,7 @@ state 32
 
 state 33
 
-    expression  ->  expression ASSIGN . expression   (rule 39)
-
-    FUNCTION	shift, and go to state 5
-    DOUBLE_LITERAL	shift, and go to state 8
-    INTEGER_LITERAL	shift, and go to state 9
-    STRING_LITERAL	shift, and go to state 10
-    IDENTIFIER	shift, and go to state 11
-    LEFT_PAREN	shift, and go to state 14
-
-    expression	go to state 55
-
-
-
-state 34
-
-    expression  ->  expression LESS . expression   (rule 37)
+    expression  ->  expression ASSIGN . expression   (rule 41)
 
     FUNCTION	shift, and go to state 5
     DOUBLE_LITERAL	shift, and go to state 8
@@ -628,9 +640,9 @@ state 34
 
 
 
-state 35
+state 34
 
-    expression  ->  expression MORE . expression   (rule 38)
+    expression  ->  expression LESS . expression   (rule 39)
 
     FUNCTION	shift, and go to state 5
     DOUBLE_LITERAL	shift, and go to state 8
@@ -643,9 +655,9 @@ state 35
 
 
 
-state 36
+state 35
 
-    expression  ->  expression ADD . expression   (rule 33)
+    expression  ->  expression MORE . expression   (rule 40)
 
     FUNCTION	shift, and go to state 5
     DOUBLE_LITERAL	shift, and go to state 8
@@ -658,9 +670,9 @@ state 36
 
 
 
-state 37
+state 36
 
-    expression  ->  expression SUB . expression   (rule 34)
+    expression  ->  expression ADD . expression   (rule 35)
 
     FUNCTION	shift, and go to state 5
     DOUBLE_LITERAL	shift, and go to state 8
@@ -673,9 +685,9 @@ state 37
 
 
 
-state 38
+state 37
 
-    expression  ->  expression MUL . expression   (rule 35)
+    expression  ->  expression SUB . expression   (rule 36)
 
     FUNCTION	shift, and go to state 5
     DOUBLE_LITERAL	shift, and go to state 8
@@ -688,9 +700,9 @@ state 38
 
 
 
-state 39
+state 38
 
-    expression  ->  expression DIV . expression   (rule 36)
+    expression  ->  expression MUL . expression   (rule 37)
 
     FUNCTION	shift, and go to state 5
     DOUBLE_LITERAL	shift, and go to state 8
@@ -700,6 +712,21 @@ state 39
     LEFT_PAREN	shift, and go to state 14
 
     expression	go to state 61
+
+
+
+state 39
+
+    expression  ->  expression DIV . expression   (rule 38)
+
+    FUNCTION	shift, and go to state 5
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_PAREN	shift, and go to state 14
+
+    expression	go to state 62
 
 
 
@@ -713,54 +740,41 @@ state 40
     INTEGER_LITERAL	shift, and go to state 9
     STRING_LITERAL	shift, and go to state 10
     IDENTIFIER	shift, and go to state 11
-    RIGHT_PAREN	shift, and go to state 62
+    RIGHT_PAREN	shift, and go to state 63
     LEFT_PAREN	shift, and go to state 14
 
-    arguments	go to state 63
-    expression	go to state 64
+    arguments	go to state 64
+    expression	go to state 65
 
 
 
 state 41
 
-    statement  ->  IF LEFT_PAREN expression . RIGHT_PAREN statement   (rule 15)
-    statement  ->  IF LEFT_PAREN expression . RIGHT_PAREN statement ELSE statement   (rule 16)
-    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
-    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression DOT . LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression DOT . IDENTIFIER   (rule 34)
 
-    RIGHT_PAREN	shift, and go to state 65
-    ASSIGN	shift, and go to state 33
-    LESS	shift, and go to state 34
-    MORE	shift, and go to state 35
-    ADD 	shift, and go to state 36
-    SUB 	shift, and go to state 37
-    MUL 	shift, and go to state 38
-    DIV 	shift, and go to state 39
-    LEFT_PAREN	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 66
+    LEFT_PAREN	shift, and go to state 67
 
 
 
 state 42
 
-    statement  ->  FOR LEFT_PAREN expression . SEMICOLON expression SEMICOLON expression RIGHT_PAREN statement   (rule 17)
+    statement  ->  IF LEFT_PAREN expression . RIGHT_PAREN statement   (rule 15)
+    statement  ->  IF LEFT_PAREN expression . RIGHT_PAREN statement ELSE statement   (rule 16)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
-    SEMICOLON	shift, and go to state 66
+    RIGHT_PAREN	shift, and go to state 68
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
     MORE	shift, and go to state 35
@@ -769,23 +783,26 @@ state 42
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
 state 43
 
-    statement  ->  WHILE LEFT_PAREN expression . RIGHT_PAREN statement   (rule 18)
+    statement  ->  FOR LEFT_PAREN expression . SEMICOLON expression SEMICOLON expression RIGHT_PAREN statement   (rule 17)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
-    RIGHT_PAREN	shift, and go to state 67
+    SEMICOLON	shift, and go to state 69
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
     MORE	shift, and go to state 35
@@ -794,30 +811,59 @@ state 43
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
 state 44
 
-    statement  ->  DO statement WHILE . LEFT_PAREN expression RIGHT_PAREN SEMICOLON   (rule 19)
+    statement  ->  WHILE LEFT_PAREN expression . RIGHT_PAREN statement   (rule 18)
+    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
+    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
-    LEFT_PAREN	shift, and go to state 68
+    RIGHT_PAREN	shift, and go to state 70
+    ASSIGN	shift, and go to state 33
+    LESS	shift, and go to state 34
+    MORE	shift, and go to state 35
+    ADD 	shift, and go to state 36
+    SUB 	shift, and go to state 37
+    MUL 	shift, and go to state 38
+    DIV 	shift, and go to state 39
+    LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
 state 45
 
-    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN . parameters RIGHT_PAREN statement   (rule 26)
-    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN . RIGHT_PAREN statement   (rule 27)
+    statement  ->  DO statement WHILE . LEFT_PAREN expression RIGHT_PAREN SEMICOLON   (rule 19)
 
-    IDENTIFIER	shift, and go to state 46
-    RIGHT_PAREN	shift, and go to state 69
-
-    parameters	go to state 70
+    LEFT_PAREN	shift, and go to state 71
 
 
 
 state 46
+
+    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN . parameters RIGHT_PAREN statement   (rule 26)
+    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN . RIGHT_PAREN statement   (rule 27)
+
+    IDENTIFIER	shift, and go to state 47
+    RIGHT_PAREN	shift, and go to state 72
+
+    parameters	go to state 73
+
+
+
+state 47
 
     parameters  ->  IDENTIFIER .   (rule 5)
 
@@ -825,7 +871,7 @@ state 46
 
 
 
-state 47
+state 48
 
     expression  ->  FUNCTION LEFT_PAREN RIGHT_PAREN . statement   (rule 29)
 
@@ -844,22 +890,22 @@ state 47
     SEMICOLON	shift, and go to state 13
     LEFT_PAREN	shift, and go to state 14
 
-    statement	go to state 71
+    statement	go to state 74
     expression	go to state 17
 
 
 
-state 48
+state 49
 
     parameters  ->  parameters . COMMA IDENTIFIER   (rule 6)
     expression  ->  FUNCTION LEFT_PAREN parameters . RIGHT_PAREN statement   (rule 28)
 
-    RIGHT_PAREN	shift, and go to state 72
-    COMMA	shift, and go to state 73
+    RIGHT_PAREN	shift, and go to state 75
+    COMMA	shift, and go to state 76
 
 
 
-state 49
+state 50
 
     statement  ->  VAR IDENTIFIER SEMICOLON .   (rule 13)
 
@@ -867,7 +913,7 @@ state 49
 
 
 
-state 50
+state 51
 
     statement  ->  VAR IDENTIFIER ASSIGN . expression SEMICOLON   (rule 14)
 
@@ -878,11 +924,11 @@ state 50
     IDENTIFIER	shift, and go to state 11
     LEFT_PAREN	shift, and go to state 14
 
-    expression	go to state 74
+    expression	go to state 77
 
 
 
-state 51
+state 52
 
     statement  ->  RETURN expression SEMICOLON .   (rule 21)
 
@@ -890,7 +936,7 @@ state 51
 
 
 
-state 52
+state 53
 
     statement  ->  LEFT_BRACE statements_list RIGHT_BRACE .   (rule 12)
 
@@ -898,7 +944,7 @@ state 52
 
 
 
-state 53
+state 54
 
     statements_list  ->  statements_list statement .   (rule 4)
 
@@ -906,7 +952,7 @@ state 53
 
 
 
-state 54
+state 55
 
     expression  ->  LEFT_PAREN expression RIGHT_PAREN .   (rule 30)
 
@@ -914,18 +960,20 @@ state 54
 
 
 
-state 55
+state 56
 
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
-    expression  ->  expression ASSIGN expression .   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
+    expression  ->  expression ASSIGN expression .   (rule 41)
 
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
@@ -935,31 +983,9 @@ state 55
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
-    $default	reduce using rule 39 (expression)
-
-
-
-state 56
-
-    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
-    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression LESS expression .   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
-
-    ADD 	shift, and go to state 36
-    SUB 	shift, and go to state 37
-    MUL 	shift, and go to state 38
-    DIV 	shift, and go to state 39
-    LEFT_PAREN	shift, and go to state 40
-
-    $default	reduce using rule 37 (expression)
+    $default	reduce using rule 41 (expression)
 
 
 
@@ -967,22 +993,25 @@ state 57
 
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression MORE expression .   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression LESS expression .   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
     ADD 	shift, and go to state 36
     SUB 	shift, and go to state 37
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
-    $default	reduce using rule 38 (expression)
+    $default	reduce using rule 39 (expression)
 
 
 
@@ -990,20 +1019,25 @@ state 58
 
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression ADD expression .   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression MORE expression .   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
+    ADD 	shift, and go to state 36
+    SUB 	shift, and go to state 37
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
-    $default	reduce using rule 33 (expression)
+    $default	reduce using rule 40 (expression)
 
 
 
@@ -1011,20 +1045,23 @@ state 59
 
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression SUB expression .   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression ADD expression .   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
-    $default	reduce using rule 34 (expression)
+    $default	reduce using rule 35 (expression)
 
 
 
@@ -1032,18 +1069,23 @@ state 60
 
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression MUL expression .   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression SUB expression .   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
+    MUL 	shift, and go to state 38
+    DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
-    $default	reduce using rule 35 (expression)
+    $default	reduce using rule 36 (expression)
 
 
 
@@ -1051,22 +1093,47 @@ state 61
 
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression DIV expression .   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression MUL expression .   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
-    $default	reduce using rule 36 (expression)
+    $default	reduce using rule 37 (expression)
 
 
 
 state 62
+
+    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
+    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression DIV expression .   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
+
+    LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
+
+    $default	reduce using rule 38 (expression)
+
+
+
+state 63
 
     expression  ->  expression LEFT_PAREN RIGHT_PAREN .   (rule 31)
 
@@ -1074,28 +1141,30 @@ state 62
 
 
 
-state 63
+state 64
 
     arguments  ->  arguments . COMMA expression   (rule 8)
     expression  ->  expression LEFT_PAREN arguments . RIGHT_PAREN   (rule 32)
 
-    RIGHT_PAREN	shift, and go to state 75
-    COMMA	shift, and go to state 76
+    RIGHT_PAREN	shift, and go to state 78
+    COMMA	shift, and go to state 79
 
 
 
-state 64
+state 65
 
     arguments  ->  expression .   (rule 7)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
@@ -1105,78 +1174,23 @@ state 64
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
     $default	reduce using rule 7 (arguments)
 
 
 
-state 65
-
-    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN . statement   (rule 15)
-    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN . statement ELSE statement   (rule 16)
-
-    IF  	shift, and go to state 1
-    FOR 	shift, and go to state 2
-    WHILE	shift, and go to state 3
-    DO  	shift, and go to state 4
-    FUNCTION	shift, and go to state 5
-    VAR 	shift, and go to state 6
-    RETURN	shift, and go to state 7
-    DOUBLE_LITERAL	shift, and go to state 8
-    INTEGER_LITERAL	shift, and go to state 9
-    STRING_LITERAL	shift, and go to state 10
-    IDENTIFIER	shift, and go to state 11
-    LEFT_BRACE	shift, and go to state 12
-    SEMICOLON	shift, and go to state 13
-    LEFT_PAREN	shift, and go to state 14
-
-    statement	go to state 77
-    expression	go to state 17
-
-
-
 state 66
 
-    statement  ->  FOR LEFT_PAREN expression SEMICOLON . expression SEMICOLON expression RIGHT_PAREN statement   (rule 17)
+    expression  ->  expression DOT IDENTIFIER .   (rule 34)
 
-    FUNCTION	shift, and go to state 5
-    DOUBLE_LITERAL	shift, and go to state 8
-    INTEGER_LITERAL	shift, and go to state 9
-    STRING_LITERAL	shift, and go to state 10
-    IDENTIFIER	shift, and go to state 11
-    LEFT_PAREN	shift, and go to state 14
-
-    expression	go to state 78
+    $default	reduce using rule 34 (expression)
 
 
 
 state 67
 
-    statement  ->  WHILE LEFT_PAREN expression RIGHT_PAREN . statement   (rule 18)
-
-    IF  	shift, and go to state 1
-    FOR 	shift, and go to state 2
-    WHILE	shift, and go to state 3
-    DO  	shift, and go to state 4
-    FUNCTION	shift, and go to state 5
-    VAR 	shift, and go to state 6
-    RETURN	shift, and go to state 7
-    DOUBLE_LITERAL	shift, and go to state 8
-    INTEGER_LITERAL	shift, and go to state 9
-    STRING_LITERAL	shift, and go to state 10
-    IDENTIFIER	shift, and go to state 11
-    LEFT_BRACE	shift, and go to state 12
-    SEMICOLON	shift, and go to state 13
-    LEFT_PAREN	shift, and go to state 14
-
-    statement	go to state 79
-    expression	go to state 17
-
-
-
-state 68
-
-    statement  ->  DO statement WHILE LEFT_PAREN . expression RIGHT_PAREN SEMICOLON   (rule 19)
+    expression  ->  expression DOT LEFT_PAREN . expression RIGHT_PAREN   (rule 33)
 
     FUNCTION	shift, and go to state 5
     DOUBLE_LITERAL	shift, and go to state 8
@@ -1189,9 +1203,10 @@ state 68
 
 
 
-state 69
+state 68
 
-    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN RIGHT_PAREN . statement   (rule 27)
+    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN . statement   (rule 15)
+    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN . statement ELSE statement   (rule 16)
 
     IF  	shift, and go to state 1
     FOR 	shift, and go to state 2
@@ -1213,27 +1228,24 @@ state 69
 
 
 
+state 69
+
+    statement  ->  FOR LEFT_PAREN expression SEMICOLON . expression SEMICOLON expression RIGHT_PAREN statement   (rule 17)
+
+    FUNCTION	shift, and go to state 5
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_PAREN	shift, and go to state 14
+
+    expression	go to state 82
+
+
+
 state 70
 
-    parameters  ->  parameters . COMMA IDENTIFIER   (rule 6)
-    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN parameters . RIGHT_PAREN statement   (rule 26)
-
-    RIGHT_PAREN	shift, and go to state 82
-    COMMA	shift, and go to state 73
-
-
-
-state 71
-
-    expression  ->  FUNCTION LEFT_PAREN RIGHT_PAREN statement .   (rule 29)
-
-    $default	reduce using rule 29 (expression)
-
-
-
-state 72
-
-    expression  ->  FUNCTION LEFT_PAREN parameters RIGHT_PAREN . statement   (rule 28)
+    statement  ->  WHILE LEFT_PAREN expression RIGHT_PAREN . statement   (rule 18)
 
     IF  	shift, and go to state 1
     FOR 	shift, and go to state 2
@@ -1255,28 +1267,111 @@ state 72
 
 
 
+state 71
+
+    statement  ->  DO statement WHILE LEFT_PAREN . expression RIGHT_PAREN SEMICOLON   (rule 19)
+
+    FUNCTION	shift, and go to state 5
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_PAREN	shift, and go to state 14
+
+    expression	go to state 84
+
+
+
+state 72
+
+    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN RIGHT_PAREN . statement   (rule 27)
+
+    IF  	shift, and go to state 1
+    FOR 	shift, and go to state 2
+    WHILE	shift, and go to state 3
+    DO  	shift, and go to state 4
+    FUNCTION	shift, and go to state 5
+    VAR 	shift, and go to state 6
+    RETURN	shift, and go to state 7
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_BRACE	shift, and go to state 12
+    SEMICOLON	shift, and go to state 13
+    LEFT_PAREN	shift, and go to state 14
+
+    statement	go to state 85
+    expression	go to state 17
+
+
+
 state 73
 
-    parameters  ->  parameters COMMA . IDENTIFIER   (rule 6)
+    parameters  ->  parameters . COMMA IDENTIFIER   (rule 6)
+    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN parameters . RIGHT_PAREN statement   (rule 26)
 
-    IDENTIFIER	shift, and go to state 84
+    RIGHT_PAREN	shift, and go to state 86
+    COMMA	shift, and go to state 76
 
 
 
 state 74
 
+    expression  ->  FUNCTION LEFT_PAREN RIGHT_PAREN statement .   (rule 29)
+
+    $default	reduce using rule 29 (expression)
+
+
+
+state 75
+
+    expression  ->  FUNCTION LEFT_PAREN parameters RIGHT_PAREN . statement   (rule 28)
+
+    IF  	shift, and go to state 1
+    FOR 	shift, and go to state 2
+    WHILE	shift, and go to state 3
+    DO  	shift, and go to state 4
+    FUNCTION	shift, and go to state 5
+    VAR 	shift, and go to state 6
+    RETURN	shift, and go to state 7
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_BRACE	shift, and go to state 12
+    SEMICOLON	shift, and go to state 13
+    LEFT_PAREN	shift, and go to state 14
+
+    statement	go to state 87
+    expression	go to state 17
+
+
+
+state 76
+
+    parameters  ->  parameters COMMA . IDENTIFIER   (rule 6)
+
+    IDENTIFIER	shift, and go to state 88
+
+
+
+state 77
+
     statement  ->  VAR IDENTIFIER ASSIGN expression . SEMICOLON   (rule 14)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
-    SEMICOLON	shift, and go to state 85
+    SEMICOLON	shift, and go to state 89
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
     MORE	shift, and go to state 35
@@ -1285,10 +1380,11 @@ state 74
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
-state 75
+state 78
 
     expression  ->  expression LEFT_PAREN arguments RIGHT_PAREN .   (rule 32)
 
@@ -1296,7 +1392,7 @@ state 75
 
 
 
-state 76
+state 79
 
     arguments  ->  arguments COMMA . expression   (rule 8)
 
@@ -1307,35 +1403,26 @@ state 76
     IDENTIFIER	shift, and go to state 11
     LEFT_PAREN	shift, and go to state 14
 
-    expression	go to state 86
+    expression	go to state 90
 
 
 
-state 77
+state 80
 
-    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement .   (rule 15)
-    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement . ELSE statement   (rule 16)
-
-    ELSE	shift, and go to state 87
-
-    $default	reduce using rule 15 (statement)
-
-
-
-state 78
-
-    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression . SEMICOLON expression RIGHT_PAREN statement   (rule 17)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression DOT LEFT_PAREN expression . RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
-    SEMICOLON	shift, and go to state 88
+    RIGHT_PAREN	shift, and go to state 91
     ASSIGN	shift, and go to state 33
     LESS	shift, and go to state 34
     MORE	shift, and go to state 35
@@ -1344,10 +1431,50 @@ state 78
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
-state 79
+state 81
+
+    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement .   (rule 15)
+    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement . ELSE statement   (rule 16)
+
+    ELSE	shift, and go to state 92
+
+    $default	reduce using rule 15 (statement)
+
+
+
+state 82
+
+    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression . SEMICOLON expression RIGHT_PAREN statement   (rule 17)
+    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
+    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
+
+    SEMICOLON	shift, and go to state 93
+    ASSIGN	shift, and go to state 33
+    LESS	shift, and go to state 34
+    MORE	shift, and go to state 35
+    ADD 	shift, and go to state 36
+    SUB 	shift, and go to state 37
+    MUL 	shift, and go to state 38
+    DIV 	shift, and go to state 39
+    LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
+
+
+
+state 83
 
     statement  ->  WHILE LEFT_PAREN expression RIGHT_PAREN statement .   (rule 18)
 
@@ -1355,188 +1482,20 @@ state 79
 
 
 
-state 80
+state 84
 
     statement  ->  DO statement WHILE LEFT_PAREN expression . RIGHT_PAREN SEMICOLON   (rule 19)
     expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
     expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
-
-    RIGHT_PAREN	shift, and go to state 89
-    ASSIGN	shift, and go to state 33
-    LESS	shift, and go to state 34
-    MORE	shift, and go to state 35
-    ADD 	shift, and go to state 36
-    SUB 	shift, and go to state 37
-    MUL 	shift, and go to state 38
-    DIV 	shift, and go to state 39
-    LEFT_PAREN	shift, and go to state 40
-
-
-
-state 81
-
-    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN RIGHT_PAREN statement .   (rule 27)
-
-    $default	reduce using rule 27 (expression)
-
-
-
-state 82
-
-    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN parameters RIGHT_PAREN . statement   (rule 26)
-
-    IF  	shift, and go to state 1
-    FOR 	shift, and go to state 2
-    WHILE	shift, and go to state 3
-    DO  	shift, and go to state 4
-    FUNCTION	shift, and go to state 5
-    VAR 	shift, and go to state 6
-    RETURN	shift, and go to state 7
-    DOUBLE_LITERAL	shift, and go to state 8
-    INTEGER_LITERAL	shift, and go to state 9
-    STRING_LITERAL	shift, and go to state 10
-    IDENTIFIER	shift, and go to state 11
-    LEFT_BRACE	shift, and go to state 12
-    SEMICOLON	shift, and go to state 13
-    LEFT_PAREN	shift, and go to state 14
-
-    statement	go to state 90
-    expression	go to state 17
-
-
-
-state 83
-
-    expression  ->  FUNCTION LEFT_PAREN parameters RIGHT_PAREN statement .   (rule 28)
-
-    $default	reduce using rule 28 (expression)
-
-
-
-state 84
-
-    parameters  ->  parameters COMMA IDENTIFIER .   (rule 6)
-
-    $default	reduce using rule 6 (parameters)
-
-
-
-state 85
-
-    statement  ->  VAR IDENTIFIER ASSIGN expression SEMICOLON .   (rule 14)
-
-    $default	reduce using rule 14 (statement)
-
-
-
-state 86
-
-    arguments  ->  arguments COMMA expression .   (rule 8)
-    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
-    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
-
-    ASSIGN	shift, and go to state 33
-    LESS	shift, and go to state 34
-    MORE	shift, and go to state 35
-    ADD 	shift, and go to state 36
-    SUB 	shift, and go to state 37
-    MUL 	shift, and go to state 38
-    DIV 	shift, and go to state 39
-    LEFT_PAREN	shift, and go to state 40
-
-    $default	reduce using rule 8 (arguments)
-
-
-
-state 87
-
-    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement ELSE . statement   (rule 16)
-
-    IF  	shift, and go to state 1
-    FOR 	shift, and go to state 2
-    WHILE	shift, and go to state 3
-    DO  	shift, and go to state 4
-    FUNCTION	shift, and go to state 5
-    VAR 	shift, and go to state 6
-    RETURN	shift, and go to state 7
-    DOUBLE_LITERAL	shift, and go to state 8
-    INTEGER_LITERAL	shift, and go to state 9
-    STRING_LITERAL	shift, and go to state 10
-    IDENTIFIER	shift, and go to state 11
-    LEFT_BRACE	shift, and go to state 12
-    SEMICOLON	shift, and go to state 13
-    LEFT_PAREN	shift, and go to state 14
-
-    statement	go to state 91
-    expression	go to state 17
-
-
-
-state 88
-
-    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression SEMICOLON . expression RIGHT_PAREN statement   (rule 17)
-
-    FUNCTION	shift, and go to state 5
-    DOUBLE_LITERAL	shift, and go to state 8
-    INTEGER_LITERAL	shift, and go to state 9
-    STRING_LITERAL	shift, and go to state 10
-    IDENTIFIER	shift, and go to state 11
-    LEFT_PAREN	shift, and go to state 14
-
-    expression	go to state 92
-
-
-
-state 89
-
-    statement  ->  DO statement WHILE LEFT_PAREN expression RIGHT_PAREN . SEMICOLON   (rule 19)
-
-    SEMICOLON	shift, and go to state 93
-
-
-
-state 90
-
-    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN parameters RIGHT_PAREN statement .   (rule 26)
-
-    $default	reduce using rule 26 (expression)
-
-
-
-state 91
-
-    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement ELSE statement .   (rule 16)
-
-    $default	reduce using rule 16 (statement)
-
-
-
-state 92
-
-    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression SEMICOLON expression . RIGHT_PAREN statement   (rule 17)
-    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
-    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
-    expression  ->  expression . ADD expression   (rule 33)
-    expression  ->  expression . SUB expression   (rule 34)
-    expression  ->  expression . MUL expression   (rule 35)
-    expression  ->  expression . DIV expression   (rule 36)
-    expression  ->  expression . LESS expression   (rule 37)
-    expression  ->  expression . MORE expression   (rule 38)
-    expression  ->  expression . ASSIGN expression   (rule 39)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
 
     RIGHT_PAREN	shift, and go to state 94
     ASSIGN	shift, and go to state 33
@@ -1547,20 +1506,21 @@ state 92
     MUL 	shift, and go to state 38
     DIV 	shift, and go to state 39
     LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
 
 
 
-state 93
+state 85
 
-    statement  ->  DO statement WHILE LEFT_PAREN expression RIGHT_PAREN SEMICOLON .   (rule 19)
+    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN RIGHT_PAREN statement .   (rule 27)
 
-    $default	reduce using rule 19 (statement)
+    $default	reduce using rule 27 (expression)
 
 
 
-state 94
+state 86
 
-    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression SEMICOLON expression RIGHT_PAREN . statement   (rule 17)
+    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN parameters RIGHT_PAREN . statement   (rule 26)
 
     IF  	shift, and go to state 1
     FOR 	shift, and go to state 2
@@ -1582,7 +1542,191 @@ state 94
 
 
 
+state 87
+
+    expression  ->  FUNCTION LEFT_PAREN parameters RIGHT_PAREN statement .   (rule 28)
+
+    $default	reduce using rule 28 (expression)
+
+
+
+state 88
+
+    parameters  ->  parameters COMMA IDENTIFIER .   (rule 6)
+
+    $default	reduce using rule 6 (parameters)
+
+
+
+state 89
+
+    statement  ->  VAR IDENTIFIER ASSIGN expression SEMICOLON .   (rule 14)
+
+    $default	reduce using rule 14 (statement)
+
+
+
+state 90
+
+    arguments  ->  arguments COMMA expression .   (rule 8)
+    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
+    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
+
+    ASSIGN	shift, and go to state 33
+    LESS	shift, and go to state 34
+    MORE	shift, and go to state 35
+    ADD 	shift, and go to state 36
+    SUB 	shift, and go to state 37
+    MUL 	shift, and go to state 38
+    DIV 	shift, and go to state 39
+    LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
+
+    $default	reduce using rule 8 (arguments)
+
+
+
+state 91
+
+    expression  ->  expression DOT LEFT_PAREN expression RIGHT_PAREN .   (rule 33)
+
+    $default	reduce using rule 33 (expression)
+
+
+
+state 92
+
+    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement ELSE . statement   (rule 16)
+
+    IF  	shift, and go to state 1
+    FOR 	shift, and go to state 2
+    WHILE	shift, and go to state 3
+    DO  	shift, and go to state 4
+    FUNCTION	shift, and go to state 5
+    VAR 	shift, and go to state 6
+    RETURN	shift, and go to state 7
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_BRACE	shift, and go to state 12
+    SEMICOLON	shift, and go to state 13
+    LEFT_PAREN	shift, and go to state 14
+
+    statement	go to state 96
+    expression	go to state 17
+
+
+
+state 93
+
+    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression SEMICOLON . expression RIGHT_PAREN statement   (rule 17)
+
+    FUNCTION	shift, and go to state 5
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_PAREN	shift, and go to state 14
+
+    expression	go to state 97
+
+
+
+state 94
+
+    statement  ->  DO statement WHILE LEFT_PAREN expression RIGHT_PAREN . SEMICOLON   (rule 19)
+
+    SEMICOLON	shift, and go to state 98
+
+
+
 state 95
+
+    expression  ->  FUNCTION IDENTIFIER LEFT_PAREN parameters RIGHT_PAREN statement .   (rule 26)
+
+    $default	reduce using rule 26 (expression)
+
+
+
+state 96
+
+    statement  ->  IF LEFT_PAREN expression RIGHT_PAREN statement ELSE statement .   (rule 16)
+
+    $default	reduce using rule 16 (statement)
+
+
+
+state 97
+
+    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression SEMICOLON expression . RIGHT_PAREN statement   (rule 17)
+    expression  ->  expression . LEFT_PAREN RIGHT_PAREN   (rule 31)
+    expression  ->  expression . LEFT_PAREN arguments RIGHT_PAREN   (rule 32)
+    expression  ->  expression . DOT LEFT_PAREN expression RIGHT_PAREN   (rule 33)
+    expression  ->  expression . DOT IDENTIFIER   (rule 34)
+    expression  ->  expression . ADD expression   (rule 35)
+    expression  ->  expression . SUB expression   (rule 36)
+    expression  ->  expression . MUL expression   (rule 37)
+    expression  ->  expression . DIV expression   (rule 38)
+    expression  ->  expression . LESS expression   (rule 39)
+    expression  ->  expression . MORE expression   (rule 40)
+    expression  ->  expression . ASSIGN expression   (rule 41)
+
+    RIGHT_PAREN	shift, and go to state 99
+    ASSIGN	shift, and go to state 33
+    LESS	shift, and go to state 34
+    MORE	shift, and go to state 35
+    ADD 	shift, and go to state 36
+    SUB 	shift, and go to state 37
+    MUL 	shift, and go to state 38
+    DIV 	shift, and go to state 39
+    LEFT_PAREN	shift, and go to state 40
+    DOT 	shift, and go to state 41
+
+
+
+state 98
+
+    statement  ->  DO statement WHILE LEFT_PAREN expression RIGHT_PAREN SEMICOLON .   (rule 19)
+
+    $default	reduce using rule 19 (statement)
+
+
+
+state 99
+
+    statement  ->  FOR LEFT_PAREN expression SEMICOLON expression SEMICOLON expression RIGHT_PAREN . statement   (rule 17)
+
+    IF  	shift, and go to state 1
+    FOR 	shift, and go to state 2
+    WHILE	shift, and go to state 3
+    DO  	shift, and go to state 4
+    FUNCTION	shift, and go to state 5
+    VAR 	shift, and go to state 6
+    RETURN	shift, and go to state 7
+    DOUBLE_LITERAL	shift, and go to state 8
+    INTEGER_LITERAL	shift, and go to state 9
+    STRING_LITERAL	shift, and go to state 10
+    IDENTIFIER	shift, and go to state 11
+    LEFT_BRACE	shift, and go to state 12
+    SEMICOLON	shift, and go to state 13
+    LEFT_PAREN	shift, and go to state 14
+
+    statement	go to state 100
+    expression	go to state 17
+
+
+
+state 100
 
     statement  ->  FOR LEFT_PAREN expression SEMICOLON expression SEMICOLON expression RIGHT_PAREN statement .   (rule 17)
 
@@ -1590,12 +1734,12 @@ state 95
 
 
 
-state 96
+state 101
 
-    $   	go to state 97
+    $   	go to state 102
 
 
 
-state 97
+state 102
 
     $default	accept

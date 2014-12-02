@@ -31,18 +31,24 @@ SGSVirtualMachine::~SGSVirtualMachine(void)
 {
 	std::for_each(frameStack.begin(),frameStack.end(),[](SGSStackFrame* i){delete i;});
 }
+
 void SGSVirtualMachine::registerFunction(std::string name,SGSValue (*pfunc)(SGSValue arg))
 {
 	SGSNativeFunction* nf=new SGSNativeFunction(pfunc);
 	nativeFunctions.push_back(nf);
 	(*getFrameStackBottom().getValue(m_analyzer.getIdentifierId(name.c_str())))=SGSValue(nf);
 }
+
+int SGSVirtualMachine::getIdentifierId(std::string name)
+{
+	return m_analyzer.getIdentifierId(name.c_str());
+}
+
 void SGSVirtualMachine::pushFrame(SGSStackFrame *f)
 {
 	if (f)
 		frameStack.push_back(f);
 }
-
 void SGSVirtualMachine::popFrame()
 {
 	if (frameStack.size()>1)
@@ -51,7 +57,6 @@ void SGSVirtualMachine::popFrame()
 		frameStack.pop_back();
 	}
 }
-
 SGSValue SGSVirtualMachine::getValue(int id)
 {
 	return getFrameStackTop().getValue(id);
@@ -108,6 +113,7 @@ SGSValue SGSVirtualMachine::runFunction(SGSFunction* function,SGSArguments *args
 	popFrame();
 	return result;
 }
+
 void SGSVirtualMachine::setContinue()
 {
 	//TODO

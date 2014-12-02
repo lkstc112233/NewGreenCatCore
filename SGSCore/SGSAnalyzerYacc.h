@@ -29,9 +29,11 @@ typedef union
 #define	SUB	277
 #define	MUL	278
 #define	DIV	279
-#define	IFX	280
-#define	ELSE	281
-#define	LEFT_PAREN	282
+#define	LEFT_PAREN	280
+#define	DOT	281
+#define	IFX	282
+#define	ELSE	283
+#define	DOTED	284
 
 
 extern YYSTYPE yylval;

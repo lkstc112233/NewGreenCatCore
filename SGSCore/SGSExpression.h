@@ -12,7 +12,7 @@ enum LiteralExpressionType
 
 enum OperateExpressionType
 {
-	OTAdd,OTSub,OTMul,OTDiv,OTAssign,OTLess,OTMore,
+	OTAdd,OTSub,OTMul,OTDiv,OTAssign,OTLess,OTMore,OTEqual,OTDot,
 };
 
 class SGSExpression
@@ -57,6 +57,7 @@ public:
 	SGSLiteralExpression* operator/(SGSLiteralExpression *exp);
 	SGSLiteralExpression* operator<(SGSLiteralExpression *exp);
 	SGSLiteralExpression* operator>(SGSLiteralExpression *exp);
+	SGSLiteralExpression* operator==(SGSLiteralExpression *exp);
 	virtual SGSValue run();
 	virtual bool isLiteral(){return type!=ETIdentifier;}
 public:
@@ -78,6 +79,20 @@ public:
 	virtual std::string getDebugString();
 };
 
+class SGSMemberExpression : public SGSExpression
+{
+private:
+	SGSExpression*		arg1;
+	int			arg2;
+public:
+	SGSMemberExpression(SGSExpression* exp,int id);
+	virtual ~SGSMemberExpression(void);
+	virtual SGSValue run();
+	virtual bool isLiteral(){return false;}
+public:
+	virtual std::string getDebugString();
+};
+
 class SGSFunctionCallExpression : public SGSExpression
 {
 private:
@@ -91,5 +106,19 @@ public:
 public:
 	virtual std::string getDebugString();
 };
+
+class SGSArrayExpression : public SGSExpression
+{
+private:
+	// TODO : Array Elements.
+public:
+	SGSArrayExpression();
+	virtual ~SGSArrayExpression(void);
+	virtual SGSValue run();
+	virtual bool isLiteral(){return false;}
+public:
+	virtual std::string getDebugString();
+};
+
 
 extern SGSExpression* nullExpression;

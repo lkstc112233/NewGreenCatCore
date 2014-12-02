@@ -624,6 +624,81 @@ SGSLiteralExpression* SGSLiteralExpression::operator>(SGSLiteralExpression *exp)
 	delete exp;
 	return this;
 }
+SGSLiteralExpression* SGSLiteralExpression::operator==(SGSLiteralExpression *exp)
+{
+	switch(type)
+	{
+	case ETNull:
+		if (NULL==exp->type)
+		{
+			type=ETInteger;
+			value.integerValue=1;
+		}
+		else
+		{
+			type=ETInteger;
+			value.integerValue=0;
+		}
+		break;
+	case ETString:
+		if (exp->type<=type)
+		{
+			std::string strCache=exp->toString();
+			if (strCache==value.stringValue)
+			{
+				type=ETInteger;
+				delete[] value.stringValue;
+				value.integerValue=1;
+			}
+			else
+			{
+				type=ETInteger;
+				delete[] value.stringValue;
+				value.integerValue=0;
+			}
+		}
+		else
+		{
+			convertToType(exp->type);
+			return operator==(exp);
+		}
+		break;
+	case ETInteger:
+		if (exp->type<=type)
+		{
+			value.integerValue=value.integerValue==exp->toInteger()?1:0;
+		}
+		else
+		{
+			convertToType(exp->type);
+			return operator==(exp);
+		}
+		break;
+	case ETFloat:
+		if (exp->type<=type)
+			value.floatValue=value.floatValue==exp->toFloat()?1.l:0.l;
+		else
+		{
+			convertToType(exp->type);
+			return operator==(exp);
+		}
+		break;
+	case ETFunction:
+		if (exp->type<=type)
+			;
+		else
+		{
+			convertToType(exp->type);
+			return operator>(exp);
+		}
+		break;
+	default:
+	case ETIdentifier:
+		throw SGSInvalidTypeException(SGSStrings::INVALID_TYPE.c_str());
+	}
+	delete exp;
+	return this;
+}
 SGSValue SGSLiteralExpression::run()
 {
 	switch(type)
@@ -722,6 +797,13 @@ SGSValue SGSOperateExpression::run()
 	case OTMore:
 		return s_virtualMachine->runExpression(args[0])
 			.operatorMore(s_virtualMachine->runExpression(args[1]));
+	case OTEqual:
+		return s_virtualMachine->runExpression(args[0])
+			.operatorEqual(s_virtualMachine->runExpression(args[1]));
+	case OTDot:
+		return s_virtualMachine->runExpression(args[0])
+			.operatorDot(s_virtualMachine->runExpression(args[1]));
+
 	default:
 		throw SGSInvalidTypeException("SGSOperateExpression::run");
 	}
@@ -756,6 +838,30 @@ std::string SGSOperateExpression::getDebugString()
 	return toReturn;
 }
 
+SGSMemberExpression::SGSMemberExpression(SGSExpression* exp,int id)
+	: arg1(exp)
+	, arg2(id)
+{
+}
+SGSMemberExpression::~SGSMemberExpression(void)
+{
+	delete arg1;
+}
+SGSValue SGSMemberExpression::run()
+{
+	return s_virtualMachine->runExpression(arg1).operatorDot(arg2);
+}
+std::string SGSMemberExpression::getDebugString()
+{
+	std::string typeName="OTDot\n";
+	std::string toReturn="Type : ";
+	toReturn += typeName;
+	toReturn+=addTab(arg1->getDebugString());
+	toReturn+="Endof : ";
+	toReturn += typeName;
+	return toReturn;
+}
+
 SGSFunctionCallExpression::SGSFunctionCallExpression(SGSExpression* fun, SGSArguments *args)
 	: function(fun)
 	, arguments(args)
@@ -784,4 +890,21 @@ std::string SGSFunctionCallExpression::getDebugString()
 SGSValue SGSFunctionCallExpression::run()
 {
 	return s_virtualMachine->runFunction((s_virtualMachine->runExpression(function).operator SGSFunction*()),arguments);
+}
+
+SGSArrayExpression::SGSArrayExpression(void)
+{
+}
+SGSArrayExpression::~SGSArrayExpression(void)
+{
+}
+SGSValue SGSArrayExpression::run()
+{
+		throw SGSInvalidTypeException("SGSLiteralExpression::run");
+	
+}
+std::string SGSArrayExpression::getDebugString()
+{
+	std::string toReturn="ArrayExpression :\n";
+	return toReturn;
 }
