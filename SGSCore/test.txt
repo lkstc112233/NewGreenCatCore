@@ -1,19 +1,5 @@
 k=100;
 
-//function iff(i)
-//{
-//	if (i)
-//		printf("true");
-//	else
-//		printf("false");
-//};
-
-//function fos(iff,txt)
-//{
-//	for (k=0;k<iff;k=k+1)
-//		printf("Now printing "+txt+" No."+k+"!");
-//};
-
 function aho(i)
 {
 	var k=2;
@@ -26,6 +12,4 @@ function r(k)
 	printf(aho(k));
 };
 
-//fos(10,"Hello");
-//fos(5,"World");
 r(5);

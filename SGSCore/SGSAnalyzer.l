@@ -30,6 +30,7 @@ int yywrap(void);
 <INITIAL>">"							return MORE;
 <INITIAL>","							return COMMA;
 <INITIAL>";"							return SEMICOLON;
+<INITIAL>"."							return DOT;
 <INITIAL>[A-Za-z_][A-Za-z0-9_]*			yylval.identifier_id = getIdentifierId(yytext);return IDENTIFIER;
 <INITIAL>[0-9]+							yylval.integer_value = strtol(yytext,NULL,10);return INTEGER_LITERAL;
 <INITIAL>[0-9]+\.|[0-9]*\.[0-9]+		yylval.float_value = strtod(yytext,NULL);return DOUBLE_LITERAL;

@@ -237,9 +237,15 @@ int SGSForStatement::run()
 	{
 		if (s_virtualMachine->isSkipping())
 			if (s_virtualMachine->isBreaking())
+			{
+				s_virtualMachine->unsetBreak();
 				break;
+			}
 			else if(s_virtualMachine->isContinuing())
+			{
+				s_virtualMachine->unsetContinue();
 				continue;
+			}
 			else
 				return 0;
 		s_virtualMachine->runStatement(statement);
@@ -281,9 +287,15 @@ int SGSWhileStatement::run()
 	{
 		if (s_virtualMachine->isSkipping())
 			if (s_virtualMachine->isBreaking())
+			{
+				s_virtualMachine->unsetBreak();
 				break;
+			}
 			else if(s_virtualMachine->isContinuing())
+			{
+				s_virtualMachine->unsetContinue();
 				continue;
+			}
 			else
 				return 0;
 		s_virtualMachine->runStatement(statement);
@@ -321,9 +333,15 @@ int SGSDoStatement::run()
 	{
 		if (s_virtualMachine->isSkipping())
 			if (s_virtualMachine->isBreaking())
+			{
+				s_virtualMachine->unsetBreak();
 				break;
+			}
 			else if(s_virtualMachine->isContinuing())
+			{
+				s_virtualMachine->unsetContinue();
 				continue;
+			}
 			else
 				return 0;
 		s_virtualMachine->runStatement(statement);

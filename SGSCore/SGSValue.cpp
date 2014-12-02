@@ -19,8 +19,10 @@ SGSValue::SGSValue(const SGSValue& c)
 	{
 	case VTString:
 		valueStorage.stringValue=new std::string(*valueStorage.stringValue);
+		break;
 	case VTArray:
 		valueStorage.arrayValue=new std::map<int,SGSValue>(*valueStorage.arrayValue);
+		break;
 	default:
 		break;
 	}
@@ -256,8 +258,10 @@ SGSValue& SGSValue::operator=(const SGSValue& v)
 	{
 	case VTString:
 		valueStorage.stringValue=new std::string(*valueStorage.stringValue);
+		break;
 	case VTArray:
 		valueStorage.arrayValue=new std::map<int,SGSValue>(*valueStorage.arrayValue);
+		break;
 	default:
 		break;
 	}

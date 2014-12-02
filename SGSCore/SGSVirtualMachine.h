@@ -50,6 +50,8 @@ public:
 	inline bool isContinuing(){return continuing;}
 	inline bool isSkipping(){return isReturning()||isBreaking()||isContinuing();}
 	SGSValue getReturnValue();
+	inline void unsetContinue(){continuing=false;}
+	inline void unsetBreak(){breaking=false;}
 };
 
 SGSVirtualMachine* createNewVirtualMachine(SGSAnalyzer *analyzer);
